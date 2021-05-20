@@ -9,7 +9,9 @@ function Header() {
   return (
     <>
       <TopHeader>
-        <h1>Chanel</h1>
+        <ChanelLogo>
+          <h1>Chanel</h1>
+        </ChanelLogo>
         <ChanelIcons>
           <RiSearchLine />
           <BiUser />
@@ -48,14 +50,8 @@ const TopHeader = styled.div`
   position: fixed;
   top: 0;
   z-index: 1;
-  background-color: white;
-
-  h1 {
-    /* font-size: 36px; */
-    font-size: 2.5rem;
-    font-weight: 600;
-    flex: 1;
-  }
+  /* background-color: white; */
+  background-color: yellow;
 
   &:before {
     content: "";
@@ -74,26 +70,12 @@ const TopHeader = styled.div`
   }
 `;
 
-const BottomHeader = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 62px;
-  width: 100vw;
+const ChanelLogo = styled.div`
+  background-color: red;
 
-  transform: translateY(77px);
-
-  a {
-    font-size: 12px;
+  h1 {
+    font-size: 2.5rem;
     font-weight: 600;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  @media (max-width: 781px) {
-    display: none;
   }
 `;
 
@@ -121,23 +103,42 @@ const AboutLink = styled.div`
   }
 `;
 
+const BottomHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 62px;
+  width: 100vw;
+
+  transform: translateY(77px);
+
+  a {
+    font-size: 12px;
+    font-weight: 600;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 781px) {
+    display: none;
+  }
+`;
+
 const ChanelIcons = styled.div`
   display: flex;
   justify-content: space-between;
-  transform: translateX(-100%);
   font-size: 17px;
   width: 100px;
-  right: 0;
-
   svg:hover {
     cursor: pointer;
   }
 
-  @media (min-width: 481px) and (max-width: 768px) {
-    display: none;
-  }
   // smartphones
   /* @media only screen and (min-width: 481px) and (max-width: 781px) {
   } */
   //tablet's and ipad
 `;
+
+const TableMenuSearch = styled.div``;
