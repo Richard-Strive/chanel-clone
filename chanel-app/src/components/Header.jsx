@@ -4,19 +4,32 @@ import { RiSearchLine } from "react-icons/ri";
 import { BiUser } from "react-icons/bi";
 import { BsStar } from "react-icons/bs";
 import { HiOutlineShoppingBag } from "react-icons/hi";
+import MenuIcon from "@material-ui/icons/Menu";
+import CloseIcon from "@material-ui/icons/Close";
+
+const Search = styled(RiSearchLine)``;
+const User = styled(BiUser)``;
+const Star = styled(BsStar)``;
+const Shopping = styled(HiOutlineShoppingBag)``;
+const Close = styled(CloseIcon)``;
+const Menu = styled(MenuIcon)``;
 
 function Header() {
   return (
     <>
       <TopHeader>
+        <TableMenuSearch>
+          <Menu />
+          <Search />
+        </TableMenuSearch>
         <ChanelLogo>
           <h1>Chanel</h1>
         </ChanelLogo>
         <ChanelIcons>
-          <RiSearchLine />
-          <BiUser />
-          <BsStar />
-          <HiOutlineShoppingBag />
+          <Search />
+          <User />
+          <Star />
+          <Shopping />
         </ChanelIcons>
       </TopHeader>
       <BottomHeader>
@@ -41,6 +54,16 @@ function Header() {
 
 export default Header;
 
+const TableMenuSearch = styled.div`
+  display: flex;
+  align-items: center;
+  transform: translateX(30%);
+
+  ${Search},${Menu} {
+    cursor: pointer;
+  }
+`;
+
 const TopHeader = styled.div`
   display: flex;
   align-items: center;
@@ -63,10 +86,22 @@ const TopHeader = styled.div`
     width: 100vw;
   }
 
-  @media (max-width: 781px) {
-    background-color: darkkhaki;
-    display: flex;
-    justify-content: center;
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
+
+  ${TableMenuSearch} {
+    display: none;
+
+    //smartphone breakpoints range
+    /* @media only screen and (min-width: 320px) and (max-width: 480px) {
+      display: flex;
+    } */
+
+    // from small screens like smartphones till tables
+    @media (max-width: 768px) {
+      display: flex;
+    }
   }
 `;
 
@@ -120,25 +155,33 @@ const BottomHeader = styled.div`
       cursor: pointer;
     }
   }
-
   @media (max-width: 781px) {
     display: none;
   }
 `;
 
 const ChanelIcons = styled.div`
-  display: flex;
+  position: absolute;
+  right: 2%;
   justify-content: space-between;
   font-size: 17px;
   width: 100px;
-  svg:hover {
+  background-color: blue;
+  transform: translateX(-30%);
+
+  @media (max-width: 768px) {
+    position: static;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  ${Search}, ${Star}, ${Shopping}, ${User} {
     cursor: pointer;
   }
 
-  // smartphones
-  /* @media only screen and (min-width: 481px) and (max-width: 781px) {
-  } */
-  //tablet's and ipad
+  ${User}, ${Search} {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 `;
-
-const TableMenuSearch = styled.div``;
