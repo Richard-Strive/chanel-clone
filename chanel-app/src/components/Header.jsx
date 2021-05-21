@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { RiSearchLine } from "react-icons/ri";
 import { BiUser } from "react-icons/bi";
@@ -14,7 +14,6 @@ const User = styled(BiUser)``;
 const Star = styled(BsStar)``;
 const Shopping = styled(HiOutlineShoppingBag)``;
 const Close = styled(CloseIcon)`
-  background-color: green;
   position: absolute;
   right: 1%;
   top: 1%;
@@ -22,41 +21,44 @@ const Close = styled(CloseIcon)`
 const Menu = styled(MenuIcon)``;
 
 function Header() {
+  const [openSideMenu, setOpenSideMenu] = useState(false);
+
   return (
     <>
-      <BurgerSideMenu>
-        <Close />
+      <BurgerSideMenuBg show={openSideMenu} />
+      <BurgerSideMenu show={openSideMenu}>
+        <Close onClick={() => setOpenSideMenu(false)} />
         <ul>
           <li>
             HAUTE COUTURE <RightArrow />
           </li>
           <li>
-            HAUTE COUTURE <RightArrow />
+            FASHION <RightArrow />
           </li>
           <li>
-            HAUTE COUTURE <RightArrow />
+            HIGH JEWELLERY <RightArrow />
           </li>
           <li>
-            HAUTE COUTURE <RightArrow />
+            FINE JEWELLERY <RightArrow />
           </li>
           <li>
-            HAUTE COUTURE <RightArrow />
+            WATCHES <RightArrow />
           </li>
         </ul>
 
         <ul>
           <li>Shop online</li>
           <li>
-            HAUTE COUTURE <RightArrow />
+            EYEWEAR <RightArrow />
           </li>
           <li>
-            HAUTE COUTURE <RightArrow />
+            FRAGRANCE <RightArrow />
           </li>
           <li>
-            HAUTE COUTURE <RightArrow />
+            MAKEUP <RightArrow />
           </li>
           <li>
-            HAUTE COUTURE <RightArrow />
+            SKINCARE <RightArrow />
           </li>
         </ul>
 
@@ -67,9 +69,10 @@ function Header() {
           </li>
         </ul>
       </BurgerSideMenu>
+
       <TopHeader>
         <TableMenuSearch>
-          <Menu />
+          <Menu onClick={() => setOpenSideMenu(true)} />
           <Search />
         </TableMenuSearch>
         <ChanelLogo>
@@ -104,32 +107,62 @@ function Header() {
 
 export default Header;
 
+const BurgerSideMenuBg = styled.div`
+  display: ${(props) => (props.show ? "block" : "none")};
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+`;
+
 const BurgerSideMenu = styled.div`
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
   z-index: 10;
-  width: 50%;
+  width: 40%;
+  transform: ${(props) => (props.show ? "translateX(0)" : "translateX(-100%)")};
+  transition: transform 250ms ease-in-out;
+  background-color: white;
 
   ul {
     margin-top: 50px;
+    transform: translateX(-25px);
   }
 
   ul:nth-of-type(3) {
     margin-top: 130px;
   }
+
+  ul:nth-of-type(2) {
+    li:nth-of-type(1) {
+      font-family: Helvetica, Open-Sans, "sans-serif-light", sans-serif;
+      color: #333;
+      font-size: 14px;
+      font-weight: 100;
+    }
+  }
+
   li {
     padding: 7px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     list-style: none;
-    background-color: slategrey;
-    width: 90%;
+
+    width: 100%;
   }
 
-  background-color: salmon;
+  @media (max-width: 480px) {
+    width: 90% !important;
+  }
 `;
 
 const TableMenuSearch = styled.div`
