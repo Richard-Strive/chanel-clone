@@ -73,8 +73,12 @@ const TopHeader = styled.div`
   position: fixed;
   top: 0;
   z-index: 1;
-  /* background-color: white; */
-  background-color: yellow;
+  background-color: white;
+
+  //smartphone breakpoints range
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    justify-content: space-between !important;
+  }
 
   &:before {
     content: "";
@@ -93,11 +97,6 @@ const TopHeader = styled.div`
   ${TableMenuSearch} {
     display: none;
 
-    //smartphone breakpoints range
-    /* @media only screen and (min-width: 320px) and (max-width: 480px) {
-      display: flex;
-    } */
-
     // from small screens like smartphones till tables
     @media (max-width: 768px) {
       display: flex;
@@ -106,10 +105,8 @@ const TopHeader = styled.div`
 `;
 
 const ChanelLogo = styled.div`
-  background-color: red;
-
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.5vw;
     font-weight: 600;
   }
 `;
@@ -167,13 +164,18 @@ const ChanelIcons = styled.div`
   justify-content: space-between;
   font-size: 17px;
   width: 100px;
-  background-color: blue;
+
   transform: translateX(-30%);
+
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    width: 50px;
+  }
 
   @media (max-width: 768px) {
     position: static;
     display: flex;
     justify-content: space-around;
+    transform: translateX(-10%);
   }
 
   ${Search}, ${Star}, ${Shopping}, ${User} {
