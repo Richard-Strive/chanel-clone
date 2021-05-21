@@ -4,19 +4,69 @@ import { RiSearchLine } from "react-icons/ri";
 import { BiUser } from "react-icons/bi";
 import { BsStar } from "react-icons/bs";
 import { HiOutlineShoppingBag } from "react-icons/hi";
+import { BiChevronRight } from "react-icons/bi";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 
+const RightArrow = styled(BiChevronRight)``;
 const Search = styled(RiSearchLine)``;
 const User = styled(BiUser)``;
 const Star = styled(BsStar)``;
 const Shopping = styled(HiOutlineShoppingBag)``;
-const Close = styled(CloseIcon)``;
+const Close = styled(CloseIcon)`
+  background-color: green;
+  position: absolute;
+  right: 1%;
+  top: 1%;
+`;
 const Menu = styled(MenuIcon)``;
 
 function Header() {
   return (
     <>
+      <BurgerSideMenu>
+        <Close />
+        <ul>
+          <li>
+            HAUTE COUTURE <RightArrow />
+          </li>
+          <li>
+            HAUTE COUTURE <RightArrow />
+          </li>
+          <li>
+            HAUTE COUTURE <RightArrow />
+          </li>
+          <li>
+            HAUTE COUTURE <RightArrow />
+          </li>
+          <li>
+            HAUTE COUTURE <RightArrow />
+          </li>
+        </ul>
+
+        <ul>
+          <li>Shop online</li>
+          <li>
+            HAUTE COUTURE <RightArrow />
+          </li>
+          <li>
+            HAUTE COUTURE <RightArrow />
+          </li>
+          <li>
+            HAUTE COUTURE <RightArrow />
+          </li>
+          <li>
+            HAUTE COUTURE <RightArrow />
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            ABOUT CHANEL
+            <RightArrow />
+          </li>
+        </ul>
+      </BurgerSideMenu>
       <TopHeader>
         <TableMenuSearch>
           <Menu />
@@ -53,6 +103,34 @@ function Header() {
 }
 
 export default Header;
+
+const BurgerSideMenu = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 50%;
+
+  ul {
+    margin-top: 50px;
+  }
+
+  ul:nth-of-type(3) {
+    margin-top: 130px;
+  }
+  li {
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    background-color: slategrey;
+    width: 90%;
+  }
+
+  background-color: salmon;
+`;
 
 const TableMenuSearch = styled.div`
   display: flex;
