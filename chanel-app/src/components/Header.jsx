@@ -162,6 +162,7 @@ const BottomHeader = styled.div`
 
 const ChanelIcons = styled.div`
   position: absolute;
+  display: flex;
   right: 2%;
   justify-content: space-between;
   font-size: 17px;
