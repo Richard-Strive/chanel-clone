@@ -5,10 +5,14 @@ import { BiUser } from "react-icons/bi";
 import { BsStar } from "react-icons/bs";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { BiChevronRight } from "react-icons/bi";
+import { HiOutlineLocationMarker } from "react-icons/hi";
+import { RiQuestionnaireLine } from "react-icons/ri";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 
 const RightArrow = styled(BiChevronRight)``;
+const Question = styled(RiQuestionnaireLine)``;
+const Position = styled(HiOutlineLocationMarker)``;
 const Search = styled(RiSearchLine)``;
 const User = styled(BiUser)``;
 const Star = styled(BsStar)``;
@@ -68,6 +72,18 @@ function Header() {
             <RightArrow />
           </li>
         </ul>
+
+        <ul>
+          <li>
+            My Account <User />
+          </li>
+          <li>
+            Find a store <Position />
+          </li>
+          <li>
+            Customer Service <Question />
+          </li>
+        </ul>
       </BurgerSideMenu>
 
       <TopHeader>
@@ -76,7 +92,7 @@ function Header() {
           <Search />
         </TableMenuSearch>
         <ChanelLogo>
-          <h1>Chanel</h1>
+          <h1>CHANEL</h1>
         </ChanelLogo>
         <ChanelIcons>
           <Search />
@@ -125,6 +141,7 @@ const BurgerSideMenu = styled.div`
   position: absolute;
   left: 0;
   top: 0;
+  height: fit-content;
   bottom: 0;
   z-index: 10;
   width: 40%;
@@ -139,6 +156,19 @@ const BurgerSideMenu = styled.div`
 
   ul:nth-of-type(3) {
     margin-top: 130px;
+  }
+
+  ul:nth-of-type(4) {
+    background-color: #f6f6f6;
+    margin-bottom: 0;
+    width: 95%;
+
+    li {
+      font-family: Helvetica, Open-Sans, "sans-serif-light", sans-serif;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      font-weight: 100;
+    }
   }
 
   ul:nth-of-type(2) {
