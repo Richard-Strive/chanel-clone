@@ -142,7 +142,7 @@ const BurgerSideMenu = styled.div`
   left: 0;
   z-index: 10;
 
-  height: fit-content;
+  height: 100vh;
   transform: ${(props) => (props.show ? "translateX(0)" : "translateX(-100%)")};
   transition: transform 250ms ease-in-out;
   background-color: white;
@@ -160,6 +160,7 @@ const BurgerSideMenu = styled.div`
     flex-direction: column;
     align-items: center;
     padding-right: 10px;
+    margin-left: -20px;
   }
 
   li {
@@ -178,8 +179,10 @@ const BurgerSideMenu = styled.div`
 
   ul:nth-of-type(4) {
     background-color: #f6f6f6;
-    margin-bottom: 0;
-
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -20px;
     li {
       font-family: Helvetica, Open-Sans, "sans-serif-light", sans-serif;
       padding: 15px 0;
