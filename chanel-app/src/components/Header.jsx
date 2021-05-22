@@ -28,7 +28,7 @@ function Header() {
   const [openSideMenu, setOpenSideMenu] = useState(false);
 
   return (
-    <>
+    <Container>
       <BurgerSideMenuBg show={openSideMenu} />
       <BurgerSideMenu show={openSideMenu}>
         <Close onClick={() => setOpenSideMenu(false)} />
@@ -117,11 +117,19 @@ function Header() {
           <a href>ABOUT CHANEL</a>
         </AboutLink>
       </BottomHeader>
-    </>
+    </Container>
   );
 }
 
 export default Header;
+
+const Container = styled.div`
+  height: 140px;
+
+  @media (max-width: 768px) {
+    height: 78px;
+  }
+`;
 
 const BurgerSideMenuBg = styled.div`
   display: ${(props) => (props.show ? "block" : "none")};
@@ -258,8 +266,14 @@ const TopHeader = styled.div`
 
 const ChanelLogo = styled.div`
   h1 {
-    font-size: 2.5vw;
+    padding-top: 25px;
+    font-size: 2.7vw;
     font-weight: 600;
+    letter-spacing: 5px;
+
+    @media (max-width: 768px) {
+      padding-top: 0 !important;
+    }
   }
 `;
 
@@ -288,6 +302,7 @@ const AboutLink = styled.div`
 `;
 
 const BottomHeader = styled.div`
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-around;
