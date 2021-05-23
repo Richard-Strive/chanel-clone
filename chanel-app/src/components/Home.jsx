@@ -16,5 +16,4 @@ export default Home;
 
 const HomeContainer = styled.div`
   width: 100vw;
-  background-color: wheat;
 `;
