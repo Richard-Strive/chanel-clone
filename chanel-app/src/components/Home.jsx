@@ -1,21 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Section from "./Section";
 
 function Home() {
-  const [sections] = useState([
-    "sunglass",
-    "woman",
-    "girl",
-    "lipstick",
-    "fingernail polish",
-    "group",
-    "watches",
-    "makeup",
-    "jewellery",
-    "chanel",
-  ]);
-
   return (
     <HomeContainer>
       <Section query="catwalk" />

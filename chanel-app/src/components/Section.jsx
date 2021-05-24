@@ -1,7 +1,9 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 
 function Section({ query }) {
+  const [isMounted, setIsMounted] = useState(false);
+
   let bg = useRef();
 
   useEffect(() => {
@@ -12,10 +14,11 @@ function Section({ query }) {
       bg.current.style.transform = `translateY(${value * velocity + "px"})`;
     });
     console.log(bg.current.style.top);
+    setIsMounted(true);
   }, []);
 
   return (
-    <Content>
+    <Content style={{ opacity: `${isMounted && "1"}` }}>
       <img
         src={`https://source.unsplash.com/1600x900/?${query}`}
         alt="modal"
@@ -33,6 +36,8 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   height: 70vh;
+  opacity: 0.1;
+  transition: opacity 4s;
 
   img {
     object-fit: cover;
