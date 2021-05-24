@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 
-function Section({ query }) {
+function Section({ query, t, b, w, bb, wb }) {
   const [isMounted, setIsMounted] = useState(false);
 
   let bg = useRef();
