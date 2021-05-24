@@ -28,9 +28,6 @@ function Section({ query }) {
 export default Section;
 
 const Content = styled.div`
-  border: 5px solid blue;
-  margin-top: 10px;
-  background-color: yellow;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -39,5 +36,8 @@ const Content = styled.div`
 
   img {
     object-fit: cover;
+    @media (min-width: 481px) and (max-width: 768px) {
+      transform: scale(1.5) !important ;
+    }
   }
 `;

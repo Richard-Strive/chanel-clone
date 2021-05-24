@@ -304,6 +304,7 @@ const MainLinks = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 25px;
 `;
 
 const AboutLink = styled.div`
