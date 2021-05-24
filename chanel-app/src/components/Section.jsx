@@ -24,13 +24,58 @@ function Section({ query }) {
         alt="modal"
         ref={bg}
       />
+
+      <TextContainer>
+        <small>EYEWEAR</small>
+        <h1>2021 COLLECTION PRECIOUS DETAILS</h1>
+        <TextContainerBtn>SEE MORE</TextContainerBtn>
+      </TextContainer>
     </Content>
   );
 }
 
 export default Section;
 
+const TextContainer = styled.div`
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  text-align: center;
+`;
+
+const TextContainerBtn = styled.div`
+  position: relative;
+  background-color: white;
+  width: 8vw;
+  height: 7vh;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8vw;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:before {
+    position: absolute;
+    content: "";
+    color: black;
+    bottom: 1.5vh;
+    width: 5.1vw;
+    border-bottom: 1px solid black;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+  }
+
+  &:hover:before {
+    opacity: 10;
+  }
+`;
+
 const Content = styled.div`
+  position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -38,6 +83,7 @@ const Content = styled.div`
   height: 70vh;
   opacity: 0.1;
   transition: opacity 4s;
+  color: white;
 
   img {
     object-fit: cover;
