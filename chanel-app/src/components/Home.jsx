@@ -5,72 +5,16 @@ import Section from "./Section";
 function Home() {
   return (
     <HomeContainer>
-      <Section
-        query="sunglass"
-        t={true}
-        b={false}
-        w={true}
-        bb={true}
-        wb={true}
-      />
-      <Section query="woman" w={true} wb={true} />
-      <Section query="girl" w={true} />
-      <Section
-        query="lipstick"
-        t={true}
-        b={false}
-        w={false}
-        bb={true}
-        wb={false}
-      />
-      <Section
-        query="fingernail"
-        t={false}
-        b={false}
-        w={true}
-        bb={true}
-        wb={true}
-      />
-      <Section
-        query="group"
-        t={true}
-        b={false}
-        w={false}
-        bb={false}
-        wb={true}
-      />
-      <Section
-        query="watch"
-        t={true}
-        b={false}
-        w={false}
-        bb={false}
-        wb={true}
-      />
-      <Section
-        query="makeup"
-        t={false}
-        b={true}
-        w={false}
-        bb={false}
-        wb={false}
-      />
-      <Section
-        query="diamond"
-        t={true}
-        b={false}
-        w={false}
-        bb={false}
-        wb={true}
-      />
-      <Section
-        query="chanel"
-        t={false}
-        b={false}
-        w={true}
-        bb={false}
-        wb={false}
-      />
+      <Section query="sunglass" type="W" />
+      <Section query="woman" type="TW" />
+      <Section query="girl" type="W" />
+      <Section query="lipstick" type="TB" />
+      <Section query="fingernail" type="W" />
+      <Section query="group" type="TW" />
+      <Section query="watch" type="TW" />
+      <Section query="makeup" type="B" />
+      <Section query="diamond" type="TW" last={true} />
+      <Section query="chanel" type="W" last={true} />
     </HomeContainer>
   );
 }
@@ -79,4 +23,5 @@ export default Home;
 
 const HomeContainer = styled.div`
   width: 100vw;
+  height: 100%;
 `;

@@ -10,6 +10,8 @@ import { RiQuestionnaireLine } from "react-icons/ri";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 
+//NEED TO FIX THE ALIGN BETWEEN  ABOUT LINK AND THE ICON WITH THE REST
+
 const RightArrow = styled(BiChevronRight)``;
 const Question = styled(RiQuestionnaireLine)``;
 const Position = styled(HiOutlineLocationMarker)``;
