@@ -13,7 +13,7 @@ function Home() {
       <Section query="group" type="TW" />
       <Section query="watch" type="TW" />
       <Section query="makeup" type="B" />
-      <Section query="diamond" type="TW" last={true} />
+      <Section query="diamond" type="TW" />
       <Section query="chanel" type="W" last={true} />
     </HomeContainer>
   );

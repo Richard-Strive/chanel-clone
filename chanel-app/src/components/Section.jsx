@@ -17,18 +17,47 @@ function Section({ query, type, last }) {
   }, []);
 
   return (
-    <Content style={{ opacity: `${isMounted && "1"}` }}>
+    <Content style={{ opacity: `${isMounted && "1"}` }} last={last}>
       <img
         src={`https://source.unsplash.com/1600x1600/?${query}`}
         alt="modal"
         ref={bg}
       />
-
       <TextContainer>
         <small>EYEWEAR</small>
         <h1>2021 COLLECTION PRECIOUS DETAILS</h1>
         <TextContainerBtn type={type}>SEE MORE</TextContainerBtn>
       </TextContainer>
+
+      {last && (
+        <ChanelMoreInfo>
+          <Contact>
+            <small>CONTACT CHANEL</small>
+            <p>
+              CHANEL advisors are available to answer all of your questions.
+            </p>
+            <p>
+              <u>Client Care</u>
+            </p>
+          </Contact>
+          <FindStore>
+            <small>FIND A STORE</small>
+            <p>Enter a location to find the closest CHANEL stores</p>
+            <input
+              type="text"
+              placeholder="this is a placeholder for the cooler input"
+            />
+          </FindStore>
+          <NewsLetter>
+            <small>NEWSLETTER</small>
+            <p>Subscribe to receive the latest news from CHANEL</p>
+            <input
+              type="text"
+              placeholder="this is a placeholder for the cooler input with the 'ok' "
+            />
+          </NewsLetter>
+        </ChanelMoreInfo>
+      )}
     </Content>
   );
 }
@@ -61,6 +90,23 @@ const handleUnderline = (type) => {
     return "border-bottom: 1px solid white;";
   }
 };
+
+const Content = styled.div`
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  height: ${(props) => (props.last ? "100vh" : "70vh")};
+  opacity: 0.1;
+  transition: opacity 4s;
+  color: white;
+
+  img {
+    object-fit: cover;
+  }
+`;
 
 const TextContainer = styled.div`
   width: 30vw;
@@ -99,18 +145,21 @@ const TextContainerBtn = styled.div`
   }
 `;
 
-const Content = styled.div`
-  position: relative;
-  overflow: hidden;
+const ChanelMoreInfo = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 35vh;
+  background-color: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  height: 70vh;
-  opacity: 0.1;
-  transition: opacity 4s;
-  color: white;
-
-  img {
-    object-fit: cover;
-  }
 `;
+
+const Contact = styled.div`
+  width: 30%;
+  height: 80%;
+  background-color: gray;
+`;
+const FindStore = styled(Contact)``;
+const NewsLetter = styled(Contact)``;
