@@ -3,6 +3,7 @@ import styled from "styled-components";
 import TextField from "@material-ui/core/TextField";
 import { MdMyLocation } from "react-icons/md";
 import { withStyles } from "@material-ui/core/styles";
+import { RiSearchLine } from "react-icons/ri";
 
 const MoreInInput = withStyles({
   root: {
@@ -14,6 +15,7 @@ const MoreInInput = withStyles({
     },
     "& ": {
       width: "80%",
+      background: "yellow",
     },
     "& .MuiInputLabel-formControl": {
       fontFamily: "Helvetica",
@@ -67,8 +69,8 @@ function Section({ query, type, last, h1, small }) {
             <MoreInInput
               id="custom-css-standard-input"
               label="Search by town, city or postcode"
-            />
-            <LocationIcon />
+            ></MoreInInput>
+            <SearchIcon />
           </FindStore>
           <NewsLetter>
             <small>NEWSLETTER</small>
@@ -208,9 +210,6 @@ const FindStore = styled(Contact)`
 `;
 const NewsLetter = styled(Contact)``;
 
-const LocationIcon = styled(MdMyLocation)`
-  position: absolute;
-  font-size: 11px;
-  right: 0;
-  bottom: 50px;
+const SearchIcon = styled(RiSearchLine)`
+  position: relative;
 `;
