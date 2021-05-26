@@ -1,9 +1,30 @@
 import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
+import TextField from "@material-ui/core/TextField";
+import { MdMyLocation } from "react-icons/md";
+import { withStyles } from "@material-ui/core/styles";
 
-function Section({ query, type, last }) {
+const MoreInInput = withStyles({
+  root: {
+    "& label.Mui-focused": {
+      color: "#767676",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "black",
+    },
+    "& ": {
+      width: "80%",
+    },
+    "& .MuiInputLabel-formControl": {
+      fontFamily: "Helvetica",
+      fontWeight: 100,
+      fontSize: "14px",
+    },
+  },
+})(TextField);
+
+function Section({ query, type, last, h1, small }) {
   const [isMounted, setIsMounted] = useState(false);
-
   let bg = useRef();
 
   useEffect(() => {
@@ -23,9 +44,9 @@ function Section({ query, type, last }) {
         alt="modal"
         ref={bg}
       />
-      <TextContainer>
-        <small>EYEWEAR</small>
-        <h1>2021 COLLECTION PRECIOUS DETAILS</h1>
+      <TextContainer style={{ marginBottom: `${last ? "6%" : ""}` }}>
+        <small>{small}</small>
+        <h1>{h1}</h1>
         <TextContainerBtn type={type}>SEE MORE</TextContainerBtn>
       </TextContainer>
 
@@ -43,10 +64,11 @@ function Section({ query, type, last }) {
           <FindStore>
             <small>FIND A STORE</small>
             <p>Enter a location to find the closest CHANEL stores</p>
-            <input
-              type="text"
-              placeholder="this is a placeholder for the cooler input"
+            <MoreInInput
+              id="custom-css-standard-input"
+              label="Search by town, city or postcode"
             />
+            <LocationIcon />
           </FindStore>
           <NewsLetter>
             <small>NEWSLETTER</small>
@@ -103,6 +125,11 @@ const Content = styled.div`
   transition: opacity 4s;
   color: white;
 
+  small,
+  h1 {
+    text-transform: uppercase;
+  }
+
   img {
     object-fit: cover;
   }
@@ -154,12 +181,36 @@ const ChanelMoreInfo = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  color: #333;
+  font-size: 14px;
+  font-weight: 100;
 `;
 
 const Contact = styled.div`
-  width: 30%;
-  height: 80%;
-  background-color: gray;
+  width: 25%;
+  height: 60%;
+
+  small {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  p {
+    font-family: Helvetica, Open-Sans, "sans-serif-light", sans-serif;
+  }
+
+  p:first-of-type {
+    color: #767676;
+  }
 `;
-const FindStore = styled(Contact)``;
+
+const FindStore = styled(Contact)`
+  position: relative;
+`;
 const NewsLetter = styled(Contact)``;
+
+const LocationIcon = styled(MdMyLocation)`
+  position: absolute;
+  font-size: 11px;
+  right: 0;
+  bottom: 50px;
+`;
