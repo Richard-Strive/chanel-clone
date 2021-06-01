@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import { MdMyLocation } from "react-icons/md";
 import { withStyles } from "@material-ui/core/styles";
 import { RiSearchLine } from "react-icons/ri";
+import { IoIosArrowForward } from "react-icons/io";
 
 const MoreInInput = withStyles({
   root: {
@@ -15,7 +16,25 @@ const MoreInInput = withStyles({
     },
     "& ": {
       width: "80%",
-      // background: "yellow",
+    },
+    "& .MuiInputLabel-formControl": {
+      fontFamily: "Helvetica",
+      fontWeight: 100,
+      fontSize: "14px",
+    },
+  },
+})(TextField);
+
+const MoreInput2 = withStyles({
+  root: {
+    "& label.Mui-focused": {
+      color: "#767676",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "black",
+    },
+    "& ": {
+      width: "93%",
     },
     "& .MuiInputLabel-formControl": {
       fontFamily: "Helvetica",
@@ -79,10 +98,16 @@ function Section({ query, type, last, h1, small }) {
           <NewsLetter>
             <small>NEWSLETTER</small>
             <p>Subscribe to receive the latest news from CHANEL</p>
-            <input
-              type="text"
-              placeholder="this is a placeholder for the cooler input with the 'ok' "
-            />
+            <MaterialUiInput2>
+              <MoreInput2
+                id="custom-css-standard-input"
+                label="Enter your email address"
+              />
+              <OkAndArrow>
+                ok
+                <RightArrow />
+              </OkAndArrow>
+            </MaterialUiInput2>
           </NewsLetter>
         </ChanelMoreInfo>
       )}
@@ -226,6 +251,10 @@ const MaterialUiInput = styled.div`
   position: relative;
 `;
 
+const MaterialUiInput2 = styled.div`
+  position: relative;
+`;
+
 const PositionIcon = styled(MdMyLocation)`
   position: absolute;
   font-size: 20px;
@@ -234,10 +263,25 @@ const PositionIcon = styled(MdMyLocation)`
   cursor: pointer;
 `;
 
+const RightArrow = styled(IoIosArrowForward)``;
+
 const VR = styled.div`
   border-left: 1px solid #d8d8d8;
   height: 23px;
   position: absolute;
   bottom: 7px;
   right: 42px;
+`;
+
+const OkAndArrow = styled.div`
+  position: absolute;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  color: #767676;
+  right: 24px;
+  bottom: 4px;
+  display: flex;
+  font-size: 11px;
+  align-items: center;
 `;
