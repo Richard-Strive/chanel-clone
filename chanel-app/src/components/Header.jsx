@@ -4,7 +4,6 @@ import { RiSearchLine } from "react-icons/ri";
 import { BiUser } from "react-icons/bi";
 import { BsStar } from "react-icons/bs";
 import { HiOutlineShoppingBag } from "react-icons/hi";
-import { BiChevronRight } from "react-icons/bi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { RiQuestionnaireLine } from "react-icons/ri";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -12,7 +11,6 @@ import CloseIcon from "@material-ui/icons/Close";
 
 //NEED TO FIX THE ALIGN BETWEEN  ABOUT LINK AND THE ICON WITH THE REST
 
-const RightArrow = styled(BiChevronRight)``;
 const Question = styled(RiQuestionnaireLine)``;
 const Position = styled(HiOutlineLocationMarker)``;
 const Search = styled(RiSearchLine)``;
@@ -56,44 +54,23 @@ function Header() {
       <BurgerSideMenu show={openSideMenu}>
         <Close onClick={() => setOpenSideMenu(false)} />
         <ul>
-          <li>
-            HAUTE COUTURE <RightArrow />
-          </li>
-          <li>
-            FASHION <RightArrow />
-          </li>
-          <li>
-            HIGH JEWELLERY <RightArrow />
-          </li>
-          <li>
-            FINE JEWELLERY <RightArrow />
-          </li>
-          <li>
-            WATCHES <RightArrow />
-          </li>
+          <li>HAUTE COUTURE</li>
+          <li>FASHION</li>
+          <li>HIGH JEWELLERY</li>
+          <li>FINE JEWELLERY</li>
+          <li>WATCHES</li>
         </ul>
 
         <ul>
           <li>Shop online</li>
-          <li>
-            EYEWEAR <RightArrow />
-          </li>
-          <li>
-            FRAGRANCE <RightArrow />
-          </li>
-          <li>
-            MAKEUP <RightArrow />
-          </li>
-          <li>
-            SKINCARE <RightArrow />
-          </li>
+          <li>EYEWEAR</li>
+          <li>FRAGRANCE</li>
+          <li>MAKEUP</li>
+          <li>SKINCARE</li>
         </ul>
 
         <ul>
-          <li>
-            ABOUT CHANEL
-            <RightArrow />
-          </li>
+          <li>ABOUT CHANEL</li>
         </ul>
 
         <ul>
@@ -311,8 +288,9 @@ const MainLinks = styled.div`
 
 const AboutLink = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  align-self: flex-end;
+  justify-content: center;
+  margin-bottom: 10px;
 
   width: 10%;
 
@@ -354,8 +332,10 @@ const ChanelIcons = styled.div`
   right: 2%;
   justify-content: space-between;
   font-size: 17px;
-  width: 100px;
+  color: #767676;
 
+  width: 100px;
+  bottom: 10px;
   transform: translateX(-30%);
 
   @media only screen and (min-width: 320px) and (max-width: 480px) {
