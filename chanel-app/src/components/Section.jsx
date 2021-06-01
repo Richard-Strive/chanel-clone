@@ -59,7 +59,12 @@ function Section({ query, type, last, h1, small }) {
   }, []);
 
   return (
-    <Content style={{ opacity: `${isMounted && "1"}` }} last={last}>
+    <Content
+      style={{
+        opacity: `${isMounted && "1"}`,
+      }}
+      last={last}
+    >
       <img
         src={`https://source.unsplash.com/1600x1600/?${query}`}
         alt="modal"

@@ -56,6 +56,7 @@ function Home() {
         small="Haute Couture"
         h1="SPRING-SUMMER 2021 SHOW"
       />
+      <HiddenSection></HiddenSection>
     </HomeContainer>
   );
 }
@@ -65,4 +66,13 @@ export default Home;
 const HomeContainer = styled.div`
   width: 100vw;
   height: 100%;
+`;
+
+const HiddenSection = styled.div`
+  position: sticky;
+  bottom: 0;
+  height: 90vh;
+  width: 100%;
+  background-image: url("https://source.unsplash.com/1600x1600/?sunset");
+  z-index: -1;
 `;
