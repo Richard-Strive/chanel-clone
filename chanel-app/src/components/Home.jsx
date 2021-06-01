@@ -56,7 +56,22 @@ function Home() {
         small="Haute Couture"
         h1="SPRING-SUMMER 2021 SHOW"
       />
-      <HiddenSection></HiddenSection>
+      <HiddenSection>
+        <ChanelLogo>
+          <h1>Chanel</h1>
+        </ChanelLogo>
+        <HiddenContentContainer>
+          <HiddenContent></HiddenContent>
+          <HiddenContent></HiddenContent>
+          <HiddenContent></HiddenContent>
+          <HiddenContent></HiddenContent>
+        </HiddenContentContainer>
+        <HiddenFooter>
+          <VR />
+          <HiddenLeft></HiddenLeft>
+          <HiddenRight></HiddenRight>
+        </HiddenFooter>
+      </HiddenSection>
     </HomeContainer>
   );
 }
@@ -73,6 +88,72 @@ const HiddenSection = styled.div`
   bottom: 0;
   height: 90vh;
   width: 100%;
-  background-image: url("https://source.unsplash.com/1600x1600/?sunset");
+  background-color: black;
   z-index: -1;
+`;
+
+const ChanelLogo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: pink;
+
+  h1 {
+    padding-top: 25px;
+    font-size: 2.7vw;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: white;
+
+    @media (max-width: 768px) {
+      padding-top: 0 !important;
+    }
+  }
+`;
+
+const HiddenContentContainer = styled.div`
+  background-color: lightgreen;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+`;
+
+const HiddenContent = styled.div`
+  width: 23%;
+  height: 70%;
+  background-color: lightyellow;
+  color: #767676;
+`;
+
+const HiddenFooter = styled.div`
+  height: 10%;
+  width: 100%;
+  background-color: azure;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const VR = styled.div`
+  border-bottom: 1px solid red;
+  width: 80%;
+  height: 1px;
+  position: absolute;
+  top: 10px;
+  align-self: flex-end;
+`;
+
+const HiddenLeft = styled.div`
+  background-color: lightcoral;
+  width: 20%;
+  height: 30px;
+`;
+const HiddenRight = styled.div`
+  background-color: lightblue;
+  width: 10%;
+  height: 30px;
 `;
