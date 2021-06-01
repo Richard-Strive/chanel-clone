@@ -15,7 +15,7 @@ const MoreInInput = withStyles({
     },
     "& ": {
       width: "80%",
-      background: "yellow",
+      // background: "yellow",
     },
     "& .MuiInputLabel-formControl": {
       fontFamily: "Helvetica",
@@ -66,11 +66,15 @@ function Section({ query, type, last, h1, small }) {
           <FindStore>
             <small>FIND A STORE</small>
             <p>Enter a location to find the closest CHANEL stores</p>
-            <MoreInInput
-              id="custom-css-standard-input"
-              label="Search by town, city or postcode"
-            ></MoreInInput>
-            <SearchIcon />
+            <MaterialUiInput>
+              <MoreInInput
+                id="custom-css-standard-input"
+                label="Search by town, city or postcode"
+              />
+              <SearchIcon />
+              <VR />
+              <PositionIcon />
+            </MaterialUiInput>
           </FindStore>
           <NewsLetter>
             <small>NEWSLETTER</small>
@@ -211,5 +215,29 @@ const FindStore = styled(Contact)`
 const NewsLetter = styled(Contact)``;
 
 const SearchIcon = styled(RiSearchLine)`
+  position: absolute;
+  font-size: 20px;
+  bottom: 8px;
+  right: 70px;
+  cursor: pointer;
+`;
+
+const MaterialUiInput = styled.div`
   position: relative;
+`;
+
+const PositionIcon = styled(MdMyLocation)`
+  position: absolute;
+  font-size: 20px;
+  right: 0;
+  bottom: 8px;
+  cursor: pointer;
+`;
+
+const VR = styled.div`
+  border-left: 1px solid #d8d8d8;
+  height: 23px;
+  position: absolute;
+  bottom: 7px;
+  right: 42px;
 `;
