@@ -232,6 +232,12 @@ const HiddenContent = styled.div`
     margin-top: 7px;
     font-weight: 100;
     color: #9b9b9b;
+    width: fit-content;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 `;
 
