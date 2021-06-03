@@ -1,6 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import Section from "./Section";
+import { RiFacebookFill } from "react-icons/ri";
+import { AiOutlineInstagram } from "react-icons/ai";
+import { SiTwitter } from "react-icons/si";
+import { ImYoutube } from "react-icons/im";
+import { SiLinkedin } from "react-icons/si";
+
+const FacebookIcon = styled(RiFacebookFill)``;
+const InstagramIcon = styled(AiOutlineInstagram)``;
+const TwitterIcon = styled(SiTwitter)``;
+const YoutubeIcon = styled(ImYoutube)``;
+const LinkedInIcon = styled(SiLinkedin)``;
 
 function Home() {
   return (
@@ -58,19 +69,74 @@ function Home() {
       />
       <HiddenSection>
         <ChanelLogo>
-          <h1>Chanel</h1>
+          <h1>RICHARD CLONED ALSO THIS 😅</h1>
         </ChanelLogo>
         <HiddenContentContainer>
-          <HiddenContent></HiddenContent>
-          <HiddenContent></HiddenContent>
-          <HiddenContent></HiddenContent>
-          <HiddenContent></HiddenContent>
+          <HiddenContent>
+            <small>EXPLORE CHANEL.COM</small>
+            <ul>
+              <li>Haute Couture</li>
+              <li>Fashion</li>
+              <li>High Jewellery</li>
+              <li>Fine Jewellery</li>
+              <li>Watches</li>
+              <li>Eyewear</li>
+              <li>Fragrance</li>
+              <li>Makeup</li>
+              <li>Skincare</li>
+              <li>Sitemap</li>
+            </ul>
+          </HiddenContent>
+          <HiddenContent>
+            <small>ONLINE SERVICES</small>
+            <ul>
+              <li>Payment Methods</li>
+              <li>Shipping Options</li>
+              <li>My Account</li>
+              <li>Returns</li>
+              <li>Care & Services</li>
+              <li>FAQ</li>
+            </ul>
+          </HiddenContent>
+          <HiddenContent>
+            <small>BOUTIQUE SERVICES</small>
+            <ul>
+              <li>Find a Boutique</li>
+              <li>Appointments with CHANEL</li>
+            </ul>
+          </HiddenContent>
+          <HiddenContent>
+            <small>THE HOUSE OF CHANEL</small>
+            <ul>
+              <li>Careers</li>
+              <li>Legal</li>
+              <li>Privacy</li>
+              <li>Report to Society</li>
+              <li>Fighting Counterfeits</li>
+              <li>Financial Results</li>
+              <li>Modern Slavery Statement</li>
+            </ul>
+          </HiddenContent>
         </HiddenContentContainer>
-        <HiddenFooter>
+
+        <VrContainer>
           <VR />
-          <HiddenLeft></HiddenLeft>
-          <HiddenRight></HiddenRight>
-        </HiddenFooter>
+        </VrContainer>
+        <FooterContainer>
+          <HiddenLeft>
+            <small>
+              Change location and language
+              <span>United Kingdom - English (UK) follow us</span>
+            </small>
+          </HiddenLeft>
+          <HiddenRight>
+            <FacebookIcon />
+            <InstagramIcon />
+            <TwitterIcon />
+            <YoutubeIcon />
+            <LinkedInIcon />
+          </HiddenRight>
+        </FooterContainer>
       </HiddenSection>
     </HomeContainer>
   );
@@ -89,6 +155,9 @@ const HiddenSection = styled.div`
   height: 90vh;
   width: 100%;
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   z-index: -1;
 `;
 
@@ -97,7 +166,6 @@ const ChanelLogo = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: pink;
 
   h1 {
     padding-top: 25px;
@@ -113,8 +181,7 @@ const ChanelLogo = styled.div`
 `;
 
 const HiddenContentContainer = styled.div`
-  background-color: lightgreen;
-  width: 100%;
+  width: 90%;
   height: 60vh;
   display: flex;
   align-items: center;
@@ -122,38 +189,73 @@ const HiddenContentContainer = styled.div`
 `;
 
 const HiddenContent = styled.div`
-  width: 23%;
+  width: 25%;
   height: 70%;
-  background-color: lightyellow;
+
   color: #767676;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+
+  small {
+    font-weight: 600;
+    color: #fff;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    font-family: Helvetica, Open-Sans, "sans-serif-light", sans-serif;
+    list-style: none;
+    margin-top: 7px;
+    font-weight: 100;
+    color: #9b9b9b;
+  }
 `;
 
-const HiddenFooter = styled.div`
-  height: 10%;
-  width: 100%;
-  background-color: azure;
-  position: relative;
+const VR = styled.div`
+  border-bottom: 1px solid #333;
+  width: 90%;
+  height: 1px;
+  top: 10px;
+`;
+
+const HiddenLeft = styled.div`
+  height: 30px;
+  background: brown;
+  display: flex;
+  align-items: center;
+`;
+const HiddenRight = styled.div`
+  width: 10%;
+  height: 30px;
+  background: chocolate;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-const VR = styled.div`
-  border-bottom: 1px solid red;
-  width: 80%;
-  height: 1px;
-  position: absolute;
-  top: 10px;
-  align-self: flex-end;
+const VrContainer = styled.div`
+  width: 100%;
+  height: 6%;
+  display: flex;
+  justify-content: center;
 `;
+const FooterContainer = styled.div`
+  width: 90%;
+  height: 6%;
 
-const HiddenLeft = styled.div`
-  background-color: lightcoral;
-  width: 20%;
-  height: 30px;
-`;
-const HiddenRight = styled.div`
-  background-color: lightblue;
-  width: 10%;
-  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Helvetica, Open-Sans, "sans-serif-light", sans-serif;
+  color: #767676;
+  font-size: 12px;
+
+  span {
+    color: #fff;
+    margin-left: 10px;
+  }
 `;
