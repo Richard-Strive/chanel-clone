@@ -7,11 +7,31 @@ import { SiTwitter } from "react-icons/si";
 import { ImYoutube } from "react-icons/im";
 import { SiLinkedin } from "react-icons/si";
 
-const FacebookIcon = styled(RiFacebookFill)``;
-const InstagramIcon = styled(AiOutlineInstagram)``;
-const TwitterIcon = styled(SiTwitter)``;
-const YoutubeIcon = styled(ImYoutube)``;
-const LinkedInIcon = styled(SiLinkedin)``;
+const FacebookIcon = styled(RiFacebookFill)`
+  width: 21px;
+  height: 21px;
+  cursor: pointer;
+`;
+const InstagramIcon = styled(AiOutlineInstagram)`
+  width: 21px;
+  height: 21px;
+  cursor: pointer;
+`;
+const TwitterIcon = styled(SiTwitter)`
+  width: 21px;
+  height: 21px;
+  cursor: pointer;
+`;
+const YoutubeIcon = styled(ImYoutube)`
+  width: 21px;
+  height: 21px;
+  cursor: pointer;
+`;
+const LinkedInIcon = styled(SiLinkedin)`
+  width: 21px;
+  height: 21px;
+  cursor: pointer;
+`;
 
 function Home() {
   return (
@@ -124,10 +144,10 @@ function Home() {
         </VrContainer>
         <FooterContainer>
           <HiddenLeft>
-            <small>
+            <p>
               Change location and language
               <span>United Kingdom - English (UK) follow us</span>
-            </small>
+            </p>
           </HiddenLeft>
           <HiddenRight>
             <FacebookIcon />
@@ -224,16 +244,15 @@ const VR = styled.div`
 
 const HiddenLeft = styled.div`
   height: 30px;
-  background: brown;
   display: flex;
   align-items: center;
 `;
 const HiddenRight = styled.div`
-  width: 10%;
+  width: 15%;
   height: 30px;
-  background: chocolate;
+
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 `;
 
@@ -243,6 +262,7 @@ const VrContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
+
 const FooterContainer = styled.div`
   width: 90%;
   height: 6%;
