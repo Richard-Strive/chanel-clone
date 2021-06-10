@@ -51,7 +51,7 @@ function Section({ query, type, last, h1, small }) {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       let value = window.scrollY;
-      let velocity = 0.06;
+      let velocity = 0.09;
       bg.current.style.transform = `translateY(${value * velocity + "px"})`;
     });
     setIsMounted(true);
@@ -160,7 +160,7 @@ const Content = styled.div`
   opacity: 0.1;
   transition: opacity 4s;
   color: white;
-
+  z-index: 11111111111;
   small,
   h1 {
     text-transform: uppercase;
@@ -220,6 +220,13 @@ const ChanelMoreInfo = styled.div`
   color: #333;
   font-size: 14px;
   font-weight: 100;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  p {
+    display: none;
+  }
+  }
 `;
 
 const Contact = styled.div`

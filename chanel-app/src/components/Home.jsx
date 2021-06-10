@@ -1,5 +1,5 @@
-import React from "react";
 import styled from "styled-components";
+import React, { useEffect, useState } from "react";
 import Section from "./Section";
 import { RiFacebookFill } from "react-icons/ri";
 import { AiOutlineInstagram } from "react-icons/ai";
@@ -34,6 +34,14 @@ const LinkedInIcon = styled(SiLinkedin)`
 `;
 
 function Home() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+
+    console.log(window);
+  }, []);
+
   return (
     <HomeContainer>
       <Section
@@ -87,7 +95,7 @@ function Home() {
         small="Haute Couture"
         h1="SPRING-SUMMER 2021 SHOW"
       />
-      <HiddenSection>
+      <HiddenSection >
         <ChanelLogo>
           <h1>RICHARD CLONED ALSO THIS 😅</h1>
         </ChanelLogo>
@@ -179,6 +187,8 @@ const HiddenSection = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: -1;
+
+
 `;
 
 const ChanelLogo = styled.div`
@@ -206,6 +216,11 @@ const HiddenContentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
 `;
 
 const HiddenContent = styled.div`
