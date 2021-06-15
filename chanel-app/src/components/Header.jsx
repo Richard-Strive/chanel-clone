@@ -134,7 +134,7 @@ const Container = styled.div`
 const BurgerSideMenuBg = styled.div`
   display: ${(props) => (props.show ? "block" : "none")};
   position: fixed; /* Stay in place */
-  z-index: 10; /* Sit on top */
+  z-index: 100000000; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
@@ -148,7 +148,7 @@ const BurgerSideMenuBg = styled.div`
 const BurgerSideMenu = styled.div`
   position: absolute;
   left: 0;
-  z-index: 10;
+  z-index: 10000000000000000000000;
 
   height: 100vh;
   transform: ${(props) => (props.show ? "translateX(0)" : "translateX(-100%)")};
@@ -232,7 +232,7 @@ const TopHeader = styled.div`
   width: 100vw;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 1111;
   background-color: white;
 
   //smartphone breakpoints range

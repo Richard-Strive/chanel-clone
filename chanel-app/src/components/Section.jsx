@@ -5,6 +5,11 @@ import { MdMyLocation } from "react-icons/md";
 import { withStyles } from "@material-ui/core/styles";
 import { RiSearchLine } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
+import { BsChevronDown } from "react-icons/bs";
+import { IoIosArrowUp } from "react-icons/io";
+
+const UpArrow = styled(IoIosArrowUp)``;
+const DownArrow = styled(BsChevronDown)``;
 
 const MoreInInput = withStyles({
   root: {
@@ -21,6 +26,7 @@ const MoreInInput = withStyles({
       fontFamily: "Helvetica",
       fontWeight: 100,
       fontSize: "14px",
+      // backgroundColor: "black",
     },
   },
 })(TextField);
@@ -40,6 +46,7 @@ const MoreInput2 = withStyles({
       fontFamily: "Helvetica",
       fontWeight: 100,
       fontSize: "14px",
+      backgroundColor: "red",
     },
   },
 })(TextField);
@@ -79,7 +86,10 @@ function Section({ query, type, last, h1, small }) {
       {last && (
         <ChanelMoreInfo>
           <Contact>
-            <small>CONTACT CHANEL</small>
+            <small>
+              CONTACT CHANEL <DownArrow />
+              <UpArrow />
+            </small>
             <p>
               CHANEL advisors are available to answer all of your questions.
             </p>
@@ -88,7 +98,10 @@ function Section({ query, type, last, h1, small }) {
             </p>
           </Contact>
           <FindStore>
-            <small>FIND A STORE</small>
+            <small>
+              FIND A STORE <DownArrow />
+              <UpArrow />
+            </small>
             <p>Enter a location to find the closest CHANEL stores</p>
             <MaterialUiInput>
               <MoreInInput
@@ -101,7 +114,10 @@ function Section({ query, type, last, h1, small }) {
             </MaterialUiInput>
           </FindStore>
           <NewsLetter>
-            <small>NEWSLETTER</small>
+            <small>
+              NEWSLETTER <DownArrow />
+              <UpArrow />
+            </small>
             <p>Subscribe to receive the latest news from CHANEL</p>
             <MaterialUiInput2>
               <MoreInput2
@@ -160,7 +176,7 @@ const Content = styled.div`
   opacity: 0.1;
   transition: opacity 4s;
   color: white;
-  z-index: 11111111111;
+  z-index: 11;
   small,
   h1 {
     text-transform: uppercase;
@@ -212,8 +228,10 @@ const ChanelMoreInfo = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
+
   height: 35vh;
-  background-color: white;
+  /* background-color: white; */
+  background-color: blue;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -223,19 +241,19 @@ const ChanelMoreInfo = styled.div`
 
   @media (max-width: 480px) {
     flex-direction: column;
-  p {
-    display: none;
-  }
   }
 `;
 
 const Contact = styled.div`
   width: 25%;
-  height: 60%;
+  max-height: 30%;
+  background-color: yellow;
 
   small {
     font-size: 12px;
     font-weight: 600;
+    display: flex;
+    justify-content: space-between;
   }
   p {
     font-family: Helvetica, Open-Sans, "sans-serif-light", sans-serif;
@@ -243,6 +261,24 @@ const Contact = styled.div`
 
   p:first-of-type {
     color: #767676;
+  }
+
+  ${DownArrow}, ${UpArrow} {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    color: black;
+    position: relative;
+
+    p {
+      display: block;
+    }
+
+    ${DownArrow} {
+      display: block;
+    }
   }
 `;
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Section from "./Section";
 import { RiFacebookFill } from "react-icons/ri";
 import { AiOutlineInstagram } from "react-icons/ai";
@@ -34,13 +34,7 @@ const LinkedInIcon = styled(SiLinkedin)`
 `;
 
 function Home() {
-  const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-
-    console.log(window);
-  }, []);
 
   return (
     <HomeContainer>
@@ -187,8 +181,6 @@ const HiddenSection = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: -1;
-
-
 `;
 
 const ChanelLogo = styled.div`
@@ -300,3 +292,4 @@ const FooterContainer = styled.div`
     margin-left: 10px;
   }
 `;
+
