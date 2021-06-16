@@ -259,12 +259,8 @@ const ChanelMoreInfo = styled.div`
 
   @media (max-width: 480px) {
     flex-direction: column;
-    background-color: blue;
-    height: 55vh;
 
-    /* .MuiFormControl-root {
-      display: none;
-    } */
+    height: fit-content;
   }
 `;
 
@@ -294,7 +290,7 @@ const Contact = styled.div`
     width: 90%;
     color: black;
     position: relative;
-    background-color: yellow;
+    /* background-color: yellow; */
 
     p {
       display: ${(props) => (props.contact ? "block" : "none")};

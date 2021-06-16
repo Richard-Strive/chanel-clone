@@ -34,8 +34,6 @@ const LinkedInIcon = styled(SiLinkedin)`
 `;
 
 function Home() {
-
-
   return (
     <HomeContainer>
       <Section
@@ -89,7 +87,7 @@ function Home() {
         small="Haute Couture"
         h1="SPRING-SUMMER 2021 SHOW"
       />
-      <HiddenSection >
+      <HiddenSection>
         <ChanelLogo>
           <h1>RICHARD CLONED ALSO THIS 😅</h1>
         </ChanelLogo>
@@ -181,6 +179,12 @@ const HiddenSection = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: -1;
+
+  @media (max-width: 761px) {
+    margin-top: 100px;
+    transform: translateY(5px);
+    height: fit-content;
+  }
 `;
 
 const ChanelLogo = styled.div`
@@ -198,6 +202,7 @@ const ChanelLogo = styled.div`
 
     @media (max-width: 768px) {
       padding-top: 0 !important;
+      padding: 10px;
     }
   }
 `;
@@ -209,15 +214,19 @@ const HiddenContentContainer = styled.div`
   align-items: center;
   justify-content: space-around;
 
-  
   @media (max-width: 480px) {
     flex-direction: column;
+    margin-top: 180px;
   }
 `;
 
 const HiddenContent = styled.div`
   width: 25%;
   height: 70%;
+
+  @media (max-width: 761px) {
+    width: 100%;
+  }
 
   color: #767676;
   display: flex;
@@ -252,7 +261,7 @@ const VR = styled.div`
   border-bottom: 1px solid #333;
   width: 90%;
   height: 1px;
-  top: 10px;
+  margin-top: 100px;
 `;
 
 const HiddenLeft = styled.div`
@@ -279,6 +288,7 @@ const VrContainer = styled.div`
 const FooterContainer = styled.div`
   width: 90%;
   height: 6%;
+  background-color: cyan;
 
   display: flex;
   justify-content: space-between;
@@ -292,4 +302,3 @@ const FooterContainer = styled.div`
     margin-left: 10px;
   }
 `;
-
