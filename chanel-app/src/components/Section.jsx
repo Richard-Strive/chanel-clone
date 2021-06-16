@@ -6,10 +6,6 @@ import { withStyles } from "@material-ui/core/styles";
 import { RiSearchLine } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
 import { BsChevronDown } from "react-icons/bs";
-import { IoIosArrowUp } from "react-icons/io";
-
-const UpArrow = styled(IoIosArrowUp)``;
-const DownArrow = styled(BsChevronDown)``;
 
 const MoreInInput = withStyles({
   root: {
@@ -26,7 +22,6 @@ const MoreInInput = withStyles({
       fontFamily: "Helvetica",
       fontWeight: 100,
       fontSize: "14px",
-      // backgroundColor: "black",
     },
   },
 })(TextField);
@@ -46,13 +41,15 @@ const MoreInput2 = withStyles({
       fontFamily: "Helvetica",
       fontWeight: 100,
       fontSize: "14px",
-      backgroundColor: "red",
     },
   },
 })(TextField);
 
 function Section({ query, type, last, h1, small }) {
   const [isMounted, setIsMounted] = useState(false);
+  const [contact, setContact] = useState(false);
+  const [findStore, setFindStore] = useState(false);
+  const [newsLetter, setNewsLetter] = useState(false);
   let bg = useRef();
 
   useEffect(() => {
@@ -85,10 +82,13 @@ function Section({ query, type, last, h1, small }) {
 
       {last && (
         <ChanelMoreInfo>
-          <Contact>
+          <Contact contact={contact}>
             <small>
-              CONTACT CHANEL <DownArrow />
-              <UpArrow />
+              CONTACT CHANEL
+              <DownArrow
+                onClick={() => setContact(!contact)}
+                style={{ transform: `${contact ? "rotateX(180deg)" : ""}` }}
+              />
             </small>
             <p>
               CHANEL advisors are available to answer all of your questions.
@@ -97,10 +97,13 @@ function Section({ query, type, last, h1, small }) {
               <u>Client Care</u>
             </p>
           </Contact>
-          <FindStore>
+          <FindStore findStore={findStore}>
             <small>
-              FIND A STORE <DownArrow />
-              <UpArrow />
+              FIND A STORE
+              <DownArrow
+                onClick={() => setFindStore(!findStore)}
+                style={{ transform: `${findStore ? "rotateX(180deg)" : ""}` }}
+              />
             </small>
             <p>Enter a location to find the closest CHANEL stores</p>
             <MaterialUiInput>
@@ -113,10 +116,13 @@ function Section({ query, type, last, h1, small }) {
               <PositionIcon />
             </MaterialUiInput>
           </FindStore>
-          <NewsLetter>
+          <NewsLetter newsLetter={newsLetter}>
             <small>
-              NEWSLETTER <DownArrow />
-              <UpArrow />
+              NEWSLETTER
+              <DownArrow
+                onClick={() => setNewsLetter(!newsLetter)}
+                style={{ transform: `${newsLetter ? "rotateX(180deg)" : ""}` }}
+              />
             </small>
             <p>Subscribe to receive the latest news from CHANEL</p>
             <MaterialUiInput2>
@@ -164,6 +170,18 @@ const handleUnderline = (type) => {
     return "border-bottom: 1px solid white;";
   }
 };
+
+const DownArrow = styled(BsChevronDown)`
+  transition: all 1s ease;
+`;
+
+const MaterialUiInput = styled.div`
+  position: relative;
+`;
+
+const MaterialUiInput2 = styled.div`
+  position: relative;
+`;
 
 const Content = styled.div`
   position: relative;
@@ -230,8 +248,8 @@ const ChanelMoreInfo = styled.div`
   width: 100%;
 
   height: 35vh;
-  /* background-color: white; */
-  background-color: blue;
+  background-color: white;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -241,13 +259,18 @@ const ChanelMoreInfo = styled.div`
 
   @media (max-width: 480px) {
     flex-direction: column;
+    background-color: blue;
+    height: 55vh;
+
+    /* .MuiFormControl-root {
+      display: none;
+    } */
   }
 `;
 
 const Contact = styled.div`
   width: 25%;
   max-height: 30%;
-  background-color: yellow;
 
   small {
     font-size: 12px;
@@ -263,7 +286,7 @@ const Contact = styled.div`
     color: #767676;
   }
 
-  ${DownArrow}, ${UpArrow} {
+  ${DownArrow} {
     display: none;
   }
 
@@ -271,11 +294,11 @@ const Contact = styled.div`
     width: 90%;
     color: black;
     position: relative;
+    background-color: yellow;
 
     p {
-      display: block;
+      display: ${(props) => (props.contact ? "block" : "none")};
     }
-
     ${DownArrow} {
       display: block;
     }
@@ -284,8 +307,16 @@ const Contact = styled.div`
 
 const FindStore = styled(Contact)`
   position: relative;
+
+  ${MaterialUiInput},p {
+    display: ${(props) => (props.findStore ? "block !important" : "none")};
+  }
 `;
-const NewsLetter = styled(Contact)``;
+const NewsLetter = styled(Contact)`
+  ${MaterialUiInput2},p {
+    display: ${(props) => (props.newsLetter ? "block !important" : "none")};
+  }
+`;
 
 const SearchIcon = styled(RiSearchLine)`
   position: absolute;
@@ -293,14 +324,6 @@ const SearchIcon = styled(RiSearchLine)`
   bottom: 8px;
   right: 70px;
   cursor: pointer;
-`;
-
-const MaterialUiInput = styled.div`
-  position: relative;
-`;
-
-const MaterialUiInput2 = styled.div`
-  position: relative;
 `;
 
 const PositionIcon = styled(MdMyLocation)`
