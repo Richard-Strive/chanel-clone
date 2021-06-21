@@ -50,42 +50,42 @@ function Header() {
 
   return (
     <Container>
-      <BurgerSideMenuBg show={openSideMenu} />
-      <BurgerSideMenu show={openSideMenu}>
-        <Close onClick={() => setOpenSideMenu(false)} />
-        <ul>
-          <li>HAUTE COUTURE</li>
-          <li>FASHION</li>
-          <li>HIGH JEWELLERY</li>
-          <li>FINE JEWELLERY</li>
-          <li>WATCHES</li>
-        </ul>
+      <BurgerSideMenuBg show={openSideMenu}>
+        <BurgerSideMenu show={openSideMenu}>
+          <Close onClick={() => setOpenSideMenu(false)} />
+          <ul>
+            <li>HAUTE COUTURE</li>
+            <li>FASHION</li>
+            <li>HIGH JEWELLERY</li>
+            <li>FINE JEWELLERY</li>
+            <li>WATCHES</li>
+          </ul>
 
-        <ul>
-          <li>Shop online</li>
-          <li>EYEWEAR</li>
-          <li>FRAGRANCE</li>
-          <li>MAKEUP</li>
-          <li>SKINCARE</li>
-        </ul>
+          <ul>
+            <li>Shop online</li>
+            <li>EYEWEAR</li>
+            <li>FRAGRANCE</li>
+            <li>MAKEUP</li>
+            <li>SKINCARE</li>
+          </ul>
 
-        <ul>
-          <li>ABOUT CHANEL</li>
-        </ul>
+          <ul>
+            <li>ABOUT CHANEL</li>
+          </ul>
 
-        <ul>
-          <li>
-            My Account <User />
-          </li>
-          <li>
-            Find a store <Position />
-          </li>
-          <li>
-            Customer Service <Question />
-          </li>
-        </ul>
-      </BurgerSideMenu>
-
+          <ul>
+            <li>
+              My Account <User />
+            </li>
+            <li>
+              Find a store <Position />
+            </li>
+            <li>
+              Customer Service <Question />
+            </li>
+          </ul>
+        </BurgerSideMenu>
+      </BurgerSideMenuBg>
       <TopHeader>
         <TableMenuSearch>
           <Menu onClick={() => setOpenSideMenu(true)} />
@@ -138,19 +138,20 @@ const BurgerSideMenuBg = styled.div`
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
+
   width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  height: 100vh; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 `;
 
 const BurgerSideMenu = styled.div`
-  position: absolute;
+  position: relative;
   left: 0;
+  top: -127px;
   z-index: 10000000000000000000000;
-
-  height: 100vh;
+  height: 98vh;
   transform: ${(props) => (props.show ? "translateX(0)" : "translateX(-100%)")};
   transition: transform 250ms ease-in-out;
   background-color: white;

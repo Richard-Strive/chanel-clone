@@ -59,7 +59,6 @@ function Section({ query, type, last, h1, small }) {
       bg.current.style.transform = `translateY(${value * velocity + "px"})`;
     });
     setIsMounted(true);
-    console.log(window);
   }, []);
 
   return (

@@ -218,14 +218,22 @@ const HiddenContentContainer = styled.div`
     flex-direction: column;
     margin-top: 180px;
   }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 const HiddenContent = styled.div`
   width: 25%;
   height: 70%;
 
-  @media (max-width: 761px) {
-    width: 100%;
+  @media (max-width: 768px) {
+    width: 20%;
+    padding: 50px;
+    height: 30% !important;
   }
 
   color: #767676;
