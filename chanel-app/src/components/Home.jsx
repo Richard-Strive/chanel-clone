@@ -181,8 +181,6 @@ const HiddenSection = styled.div`
   z-index: -1;
 
   @media (max-width: 761px) {
-    margin-top: 100px;
-    transform: translateY(5px);
     height: fit-content;
   }
 `;

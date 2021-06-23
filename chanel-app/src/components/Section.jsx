@@ -193,6 +193,7 @@ const Content = styled.div`
   transition: opacity 4s;
   color: white;
   z-index: 11;
+  padding: 1px;
   small,
   h1 {
     text-transform: uppercase;
@@ -244,9 +245,11 @@ const ChanelMoreInfo = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
+  z-index: 12;
 
   height: 35vh;
-  background-color: white;
+  /* background-color: white; */
+  background-color: yellowgreen;
 
   display: flex;
   justify-content: space-around;
@@ -257,7 +260,6 @@ const ChanelMoreInfo = styled.div`
 
   @media (max-width: 480px) {
     flex-direction: column;
-
     height: fit-content;
   }
 `;
