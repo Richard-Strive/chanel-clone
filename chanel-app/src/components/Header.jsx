@@ -50,42 +50,42 @@ function Header() {
 
   return (
     <Container>
-      <BurgerSideMenuBg show={openSideMenu}>
-        <BurgerSideMenu show={openSideMenu}>
-          <Close onClick={() => setOpenSideMenu(false)} />
-          <ul>
-            <li>HAUTE COUTURE</li>
-            <li>FASHION</li>
-            <li>HIGH JEWELLERY</li>
-            <li>FINE JEWELLERY</li>
-            <li>WATCHES</li>
-          </ul>
+      <BurgerSideMenuBg show={openSideMenu} />
+      <BurgerSideMenu show={openSideMenu}>
+        <Close onClick={() => setOpenSideMenu(false)} />
+        <ul>
+          <li>HAUTE COUTURE</li>
+          <li>FASHION</li>
+          <li>HIGH JEWELLERY</li>
+          <li>FINE JEWELLERY</li>
+          <li>WATCHES</li>
+        </ul>
 
-          <ul>
-            <li>Shop online</li>
-            <li>EYEWEAR</li>
-            <li>FRAGRANCE</li>
-            <li>MAKEUP</li>
-            <li>SKINCARE</li>
-          </ul>
+        <ul>
+          <li>Shop online</li>
+          <li>EYEWEAR</li>
+          <li>FRAGRANCE</li>
+          <li>MAKEUP</li>
+          <li>SKINCARE</li>
+        </ul>
 
-          <ul>
-            <li>ABOUT CHANEL</li>
-          </ul>
+        <ul>
+          <li>ABOUT CHANEL</li>
+        </ul>
 
-          <ul>
-            <li>
-              My Account <User />
-            </li>
-            <li>
-              Find a store <Position />
-            </li>
-            <li>
-              Customer Service <Question />
-            </li>
-          </ul>
-        </BurgerSideMenu>
-      </BurgerSideMenuBg>
+        <ul>
+          <li>
+            My Account <User />
+          </li>
+          <li>
+            Find a store <Position />
+          </li>
+          <li>
+            Customer Service <Question />
+          </li>
+        </ul>
+      </BurgerSideMenu>
+
       <TopHeader>
         <TableMenuSearch>
           <Menu onClick={() => setOpenSideMenu(true)} />
@@ -146,18 +146,13 @@ const BurgerSideMenuBg = styled.div`
 `;
 
 const BurgerSideMenu = styled.div`
-  position: relative;
-  left: 0;
-  top: -148px;
+  position: fixed;
+  left: ${(props) => (props.show ? "0" : "-100%")};
+  top: 0;
   z-index: 10000000000000000000000;
   height: 100vh;
-  transform: ${(props) => (props.show ? "translateX(0)" : "translateX(-100%)")};
-  transition: transform 250ms ease-in-out;
   background-color: white;
-
-  /* @media only screen and (min-width: 320px) and (max-width: 480px) {
-  } */
-
+  transition: left 280ms ease-in-out;
   @media (max-width: 768px) {
     width: 330px;
   }
