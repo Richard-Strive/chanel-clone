@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import TextField from "@material-ui/core/TextField";
 import { MdMyLocation } from "react-icons/md";
@@ -6,6 +6,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { RiSearchLine } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
 import { BsChevronDown } from "react-icons/bs";
+import { Parallax } from "react-parallax";
 
 const MoreInInput = withStyles({
   root: {
@@ -50,94 +51,92 @@ function Section({ query, type, last, h1, small }) {
   const [contact, setContact] = useState(false);
   const [findStore, setFindStore] = useState(false);
   const [newsLetter, setNewsLetter] = useState(false);
-  let bg = useRef();
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      let value = window.scrollY;
-      let velocity = 0.09;
-      bg.current.style.transform = `translateY(${value * velocity + "px"})`;
-    });
     setIsMounted(true);
   }, []);
 
   return (
-    <Content
-      style={{
-        opacity: `${isMounted && "1"}`,
-      }}
-      last={last}
+    <Parallax
+      blur={0}
+      bgImage={`https://source.unsplash.com/1600x1600/?${query}`}
+      bgImageAlt={`${query}`}
+      strength={160}
     >
-      <img
-        src={`https://source.unsplash.com/1600x1600/?${query}`}
-        alt="modal"
-        ref={bg}
-      />
-      <TextContainer style={{ marginBottom: `${last ? "6%" : ""}` }}>
-        <small>{small}</small>
-        <h1>{h1}</h1>
-        <TextContainerBtn type={type}>SEE MORE</TextContainerBtn>
-      </TextContainer>
+      <Content
+        style={{
+          opacity: `${isMounted && "1"}`,
+        }}
+        last={last}
+      >
+        <TextContainer style={{ marginBottom: `${last ? "6%" : ""}` }}>
+          <small>{small}</small>
+          <h1>{h1}</h1>
+          <TextContainerBtn type={type}>SEE MORE</TextContainerBtn>
+        </TextContainer>
 
-      {last && (
-        <ChanelMoreInfo>
-          <Contact contact={contact}>
-            <small>
-              CONTACT CHANEL
-              <DownArrow
-                onClick={() => setContact(!contact)}
-                style={{ transform: `${contact ? "rotateX(180deg)" : ""}` }}
-              />
-            </small>
-            <p>
-              CHANEL advisors are available to answer all of your questions.
-            </p>
-            <p>
-              <u>Client Care</u>
-            </p>
-          </Contact>
-          <FindStore findStore={findStore}>
-            <small>
-              FIND A STORE
-              <DownArrow
-                onClick={() => setFindStore(!findStore)}
-                style={{ transform: `${findStore ? "rotateX(180deg)" : ""}` }}
-              />
-            </small>
-            <p>Enter a location to find the closest CHANEL stores</p>
-            <MaterialUiInput>
-              <MoreInInput
-                id="custom-css-standard-input"
-                label="Search by town, city or postcode"
-              />
-              <SearchIcon />
-              <VR />
-              <PositionIcon />
-            </MaterialUiInput>
-          </FindStore>
-          <NewsLetter newsLetter={newsLetter}>
-            <small>
-              NEWSLETTER
-              <DownArrow
-                onClick={() => setNewsLetter(!newsLetter)}
-                style={{ transform: `${newsLetter ? "rotateX(180deg)" : ""}` }}
-              />
-            </small>
-            <p>Subscribe to receive the latest news from CHANEL</p>
-            <MaterialUiInput2>
-              <MoreInput2
-                id="custom-css-standard-input"
-                label="Enter your email address"
-              />
-              <OkAndArrow>
-                ok
-                <RightArrow />
-              </OkAndArrow>
-            </MaterialUiInput2>
-          </NewsLetter>
-        </ChanelMoreInfo>
-      )}
-    </Content>
+        {last && (
+          <ChanelMoreInfo>
+            <Contact contact={contact}>
+              <small>
+                CONTACT CHANEL
+                <DownArrow
+                  onClick={() => setContact(!contact)}
+                  style={{ transform: `${contact ? "rotateX(180deg)" : ""}` }}
+                />
+              </small>
+              <p>
+                CHANEL advisors are available to answer all of your questions.
+              </p>
+              <p>
+                <u>Client Care</u>
+              </p>
+            </Contact>
+            <FindStore findStore={findStore}>
+              <small>
+                FIND A STORE
+                <DownArrow
+                  onClick={() => setFindStore(!findStore)}
+                  style={{ transform: `${findStore ? "rotateX(180deg)" : ""}` }}
+                />
+              </small>
+              <p>Enter a location to find the closest CHANEL stores</p>
+              <MaterialUiInput>
+                <MoreInInput
+                  id="custom-css-standard-input"
+                  label="Search by town, city or postcode"
+                />
+                <SearchIcon />
+                <VR />
+                <PositionIcon />
+              </MaterialUiInput>
+            </FindStore>
+            <NewsLetter newsLetter={newsLetter}>
+              <small>
+                NEWSLETTER
+                <DownArrow
+                  onClick={() => setNewsLetter(!newsLetter)}
+                  style={{
+                    transform: `${newsLetter ? "rotateX(180deg)" : ""}`,
+                  }}
+                />
+              </small>
+              <p>Subscribe to receive the latest news from CHANEL</p>
+              <MaterialUiInput2>
+                <MoreInput2
+                  id="custom-css-standard-input"
+                  label="Enter your email address"
+                />
+                <OkAndArrow>
+                  ok
+                  <RightArrow />
+                </OkAndArrow>
+              </MaterialUiInput2>
+            </NewsLetter>
+          </ChanelMoreInfo>
+        )}
+      </Content>
+    </Parallax>
   );
 }
 

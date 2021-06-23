@@ -91,7 +91,7 @@ function Home() {
         <ChanelLogo>
           <h1>RICHARD CLONED ALSO THIS 😅</h1>
         </ChanelLogo>
-        <HiddenContentContainer>
+        {/* <HiddenContentContainer>
           <HiddenContent>
             <small>EXPLORE CHANEL.COM</small>
             <ul>
@@ -137,7 +137,7 @@ function Home() {
               <li>Modern Slavery Statement</li>
             </ul>
           </HiddenContent>
-        </HiddenContentContainer>
+        </HiddenContentContainer> */}
 
         <VrContainer>
           <VR />
