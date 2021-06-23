@@ -141,7 +141,6 @@ const BurgerSideMenuBg = styled.div`
 
   width: 100%; /* Full width */
   height: 100vh; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 `;
@@ -149,9 +148,9 @@ const BurgerSideMenuBg = styled.div`
 const BurgerSideMenu = styled.div`
   position: relative;
   left: 0;
-  top: -127px;
+  top: -148px;
   z-index: 10000000000000000000000;
-  height: 98vh;
+  height: 100vh;
   transform: ${(props) => (props.show ? "translateX(0)" : "translateX(-100%)")};
   transition: transform 250ms ease-in-out;
   background-color: white;
