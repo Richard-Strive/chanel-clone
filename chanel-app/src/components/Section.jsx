@@ -249,7 +249,7 @@ const ChanelMoreInfo = styled.div`
   bottom: 0;
   width: 100%;
   z-index: 12;
-  height: 35vh;
+  height: 20vh;
   background-color: white;
 
   padding: 30px;
@@ -266,7 +266,7 @@ const ChanelMoreInfo = styled.div`
     height: fit-content;
     align-items: center;
   }
-  @media (min-width: 768px) {
+  @media (width: 768px) {
     height: 15vh !important;
   }
 `;
