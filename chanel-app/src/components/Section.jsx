@@ -246,16 +246,16 @@ const ChanelMoreInfo = styled.div`
   bottom: 0;
   width: 100%;
   z-index: 12;
-
   height: 35vh;
-  /* background-color: white; */
-  background-color: yellowgreen;
+  background-color: white;
+
+  padding: 30px;
 
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  /* align-items: center; */
   color: #333;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 100;
 
   @media (max-width: 480px) {
@@ -305,12 +305,24 @@ const FindStore = styled(Contact)`
   position: relative;
 
   ${MaterialUiInput},p {
-    display: ${(props) => (props.findStore ? "block !important" : "none")};
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    ${MaterialUiInput},p {
+      display: ${(props) => (props.findStore ? "block !important" : "none")};
+    }
   }
 `;
 const NewsLetter = styled(Contact)`
   ${MaterialUiInput2},p {
-    display: ${(props) => (props.newsLetter ? "block !important" : "none")};
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    ${MaterialUiInput2},p {
+      display: ${(props) => (props.newsLetter ? "block !important" : "none")};
+    }
   }
 `;
 

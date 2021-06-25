@@ -91,7 +91,7 @@ function Home() {
         <ChanelLogo>
           <h1>RICHARD CLONED ALSO THIS 😅</h1>
         </ChanelLogo>
-        {/* <HiddenContentContainer>
+        <HiddenContentContainer>
           <HiddenContent>
             <small>EXPLORE CHANEL.COM</small>
             <ul>
@@ -137,7 +137,7 @@ function Home() {
               <li>Modern Slavery Statement</li>
             </ul>
           </HiddenContent>
-        </HiddenContentContainer> */}
+        </HiddenContentContainer>
 
         <VrContainer>
           <VR />
@@ -146,7 +146,7 @@ function Home() {
           <HiddenLeft>
             <p>
               Change location and language
-              <span>United Kingdom - English (UK) follow us</span>
+              <span>United Kingdom - English (UK) </span>
             </p>
           </HiddenLeft>
           <HiddenRight>
@@ -172,36 +172,18 @@ const HomeContainer = styled.div`
 const HiddenSection = styled.div`
   position: sticky;
   bottom: 0;
-  height: 90vh;
+  /* height: 90vh; */
+  height: fit-content;
   width: 100%;
   background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
+
   z-index: -1;
 
-  @media (max-width: 761px) {
-    height: fit-content;
-  }
-`;
-
-const ChanelLogo = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-
-  h1 {
-    padding-top: 25px;
-    font-size: 2.7vw;
-    font-weight: 600;
-    letter-spacing: 5px;
-    color: white;
-
-    @media (max-width: 768px) {
-      padding-top: 0 !important;
-      padding: 10px;
-    }
+  @media (max-width: 480px) {
+    position: static !important;
   }
 `;
 
@@ -209,29 +191,48 @@ const HiddenContentContainer = styled.div`
   width: 90%;
   height: 60vh;
   display: flex;
-  align-items: center;
+
+  /* align-items: center; */
+
   justify-content: space-around;
 
   @media (max-width: 480px) {
-    flex-direction: column;
-    margin-top: 180px;
+    flex-direction: column !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: fit-content !important;
   }
-
+  /* 
   @media (max-width: 768px) {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+  } */
+
+  @media (max-width: 480px) {
+    height: 100%;
   }
 `;
 
 const HiddenContent = styled.div`
   width: 25%;
   height: 70%;
+  margin: 20px;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     width: 20%;
     padding: 50px;
-    height: 30% !important;
+    height: 10% !important;
+    background-color: yellow;
+  }
+  @media (max-width: 480px) {
+    /* display: flex;
+    justify-content: flex-start; */
+    width: 30%;
+    padding: 30px;
+    height: fit-content !important;
+
+    font-size: 4vw;
   }
 
   color: #767676;
@@ -263,11 +264,24 @@ const HiddenContent = styled.div`
   }
 `;
 
-const VR = styled.div`
-  border-bottom: 1px solid #333;
-  width: 90%;
-  height: 1px;
-  margin-top: 100px;
+const ChanelLogo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  h1 {
+    padding-top: 25px;
+    font-size: 2.7vw;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: white;
+
+    @media (max-width: 768px) {
+      padding-top: 0 !important;
+      padding: 10px;
+    }
+  }
 `;
 
 const HiddenLeft = styled.div`
@@ -286,15 +300,26 @@ const HiddenRight = styled.div`
 
 const VrContainer = styled.div`
   width: 100%;
-  height: 6%;
+  height: 50px;
   display: flex;
+
   justify-content: center;
+  margin-bottom: 10px;
+
+  @media (max-width: 480px) {
+    align-items: center;
+  }
+`;
+
+const VR = styled.div`
+  border-bottom: 1px solid #333;
+  width: 90%;
+  height: 10px;
 `;
 
 const FooterContainer = styled.div`
   width: 90%;
   height: 6%;
-  background-color: cyan;
 
   display: flex;
   justify-content: space-between;
@@ -306,5 +331,14 @@ const FooterContainer = styled.div`
   span {
     color: #fff;
     margin-left: 10px;
+  }
+
+  @media (max-width: 480px) {
+    height: 100px;
+    flex-direction: column;
+
+    ${HiddenRight} {
+      width: 70%;
+    }
   }
 `;
