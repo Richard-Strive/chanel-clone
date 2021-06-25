@@ -172,18 +172,20 @@ const HomeContainer = styled.div`
 const HiddenSection = styled.div`
   position: sticky;
   bottom: 0;
-  /* height: 90vh; */
   height: fit-content;
   width: 100%;
   background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
-
   z-index: -1;
+  /* padding-top: 20px; */
 
   @media (max-width: 480px) {
     position: static !important;
+  }
+  @media (min-width: 768px) {
+    transform: translateY(50px);
   }
 `;
 
@@ -191,8 +193,6 @@ const HiddenContentContainer = styled.div`
   width: 90%;
   height: 60vh;
   display: flex;
-
-  /* align-items: center; */
 
   justify-content: space-around;
 

@@ -1,12 +1,14 @@
 import "./App.css";
 import Header from "./components/Header";
-import Home from "./components/Home";
+// import Home from "./components/Home";
+import Registration from "./components/Registration";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Home />
+      <Registration />
+      {/* <Home /> */}
     </div>
   );
 }

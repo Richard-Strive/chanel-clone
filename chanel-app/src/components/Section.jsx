@@ -175,9 +175,6 @@ const DownArrow = styled(BsChevronDown)`
 
 const MaterialUiInput = styled.div`
   position: relative;
-
-  /* @media (max-width: 480px) {
-  } */
 `;
 
 const MaterialUiInput2 = styled.div`
@@ -256,7 +253,7 @@ const ChanelMoreInfo = styled.div`
 
   display: flex;
   justify-content: space-around;
-  /* align-items: center; */
+
   color: #333;
   font-size: 12px;
   font-weight: 100;
@@ -297,7 +294,6 @@ const Contact = styled.div`
     width: 90%;
     color: black;
     position: relative;
-    /* background-color: yellow; */
 
     p {
       display: ${(props) => (props.contact ? "block" : "none")};
