@@ -261,6 +261,7 @@ const ChanelMoreInfo = styled.div`
   @media (max-width: 480px) {
     flex-direction: column;
     height: fit-content;
+    align-items: center;
   }
 `;
 
