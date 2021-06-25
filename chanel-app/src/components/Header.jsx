@@ -155,6 +155,7 @@ const BurgerSideMenu = styled.div`
   transition: left 280ms ease-in-out;
   @media (max-width: 768px) {
     width: 330px;
+    height: 100% !important;
   }
 
   ul {
