@@ -175,6 +175,9 @@ const DownArrow = styled(BsChevronDown)`
 
 const MaterialUiInput = styled.div`
   position: relative;
+
+  /* @media (max-width: 480px) {
+  } */
 `;
 
 const MaterialUiInput2 = styled.div`
@@ -263,6 +266,9 @@ const ChanelMoreInfo = styled.div`
     height: fit-content;
     align-items: center;
   }
+  @media (min-width: 768px) {
+    height: 15vh !important;
+  }
 `;
 
 const Contact = styled.div`
@@ -287,7 +293,7 @@ const Contact = styled.div`
     display: none;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     width: 90%;
     color: black;
     position: relative;
@@ -309,7 +315,7 @@ const FindStore = styled(Contact)`
     display: block;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     ${MaterialUiInput},p {
       display: ${(props) => (props.findStore ? "block !important" : "none")};
     }
@@ -320,7 +326,7 @@ const NewsLetter = styled(Contact)`
     display: block;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     ${MaterialUiInput2},p {
       display: ${(props) => (props.newsLetter ? "block !important" : "none")};
     }
@@ -333,6 +339,10 @@ const SearchIcon = styled(RiSearchLine)`
   bottom: 8px;
   right: 70px;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    right: 36px !important;
+  }
 `;
 
 const PositionIcon = styled(MdMyLocation)`
@@ -351,6 +361,10 @@ const VR = styled.div`
   position: absolute;
   bottom: 7px;
   right: 42px;
+
+  @media (max-width: 768px) {
+    right: 27px !important;
+  }
 `;
 
 const OkAndArrow = styled.div`
@@ -360,7 +374,7 @@ const OkAndArrow = styled.div`
   height: 30px;
   color: #767676;
   right: 24px;
-  bottom: 4px;
+  bottom: 7px;
   display: flex;
   font-size: 11px;
   align-items: center;

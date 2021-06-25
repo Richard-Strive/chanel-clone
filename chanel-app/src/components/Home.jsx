@@ -202,12 +202,14 @@ const HiddenContentContainer = styled.div`
     margin-bottom: 10px;
     height: fit-content !important;
   }
-  /* 
+
   @media (max-width: 768px) {
+    width: 90%;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  } */
+  }
 
   @media (max-width: 480px) {
     height: 100%;
@@ -219,15 +221,12 @@ const HiddenContent = styled.div`
   height: 70%;
   margin: 20px;
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     width: 20%;
     padding: 50px;
     height: 10% !important;
-    background-color: yellow;
   }
   @media (max-width: 480px) {
-    /* display: flex;
-    justify-content: flex-start; */
     width: 30%;
     padding: 30px;
     height: fit-content !important;

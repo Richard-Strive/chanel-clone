@@ -1,3 +1,10 @@
 .App {
   height: 100vh;
 }
+.MuiInputBase-input {
+  margin: 2px !important;
+}
+
+.MuiInputLabel-formControl {
+  font-size: 12px !important;
+}
