@@ -19,6 +19,7 @@ function AccountPage() {
 
   return (
     <AccountPageContainer>
+      <h1>ACCOUNT</h1>
       <TabsContainer>
         <TabOne onClick={() => handleTabOne()} tabOne={tabOne}>
           SIGN IN
