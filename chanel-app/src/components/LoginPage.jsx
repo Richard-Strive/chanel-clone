@@ -7,4 +7,6 @@ function LoginPage() {
 
 export default LoginPage;
 
-const LoginPageContainer = styled.div``;
+const LoginPageContainer = styled.div`
+  font-family: "Times New Roman", Times, serif;
+`;
