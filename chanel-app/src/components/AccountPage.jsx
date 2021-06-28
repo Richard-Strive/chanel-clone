@@ -4,20 +4,28 @@ import LoginPage from "./LoginPage";
 import RegistrationPage from "./RegistrationPage";
 
 function AccountPage() {
-  // const [tabOne, setTabOne] = useState(false);
-  // const [tabTwo, setTabTwo] = useState(false);
+  const [tabOne, setTabOne] = useState(true);
+  const [tabTwo, setTabTwo] = useState(false);
 
-  // if(tabOne){
-  // setTabTwo(false)
-  // }else{
-  //   setTabOne(true)
-  // }
+  const handleTabOne = () => {
+    setTabOne(true);
+    setTabTwo(false);
+  };
+
+  const handleTabTwo = () => {
+    setTabTwo(true);
+    setTabOne(false);
+  };
 
   return (
     <AccountPageContainer>
       <TabsContainer>
-        <TabOne>SIGN IN</TabOne>
-        <TabTwo>REGISTER</TabTwo>
+        <TabOne onClick={() => handleTabOne()} tabOne={tabOne}>
+          SIGN IN
+        </TabOne>
+        <TabTwo onClick={() => handleTabTwo()} tabTwo={tabTwo}>
+          REGISTER
+        </TabTwo>
         <OR />
       </TabsContainer>
       <RegistrationPage />
@@ -50,18 +58,51 @@ const TabOne = styled.div`
   height: 100%;
   width: 50%;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ${(props) =>
+    props.tabOne
+      ? `&:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    border-bottom: 3px solid blue;
+  }`
+      : ""};
 `;
 const TabTwo = styled.div`
   position: relative;
   background-color: pink;
   height: 100%;
   width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+
+  ${(props) =>
+    props.tabTwo
+      ? `&:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    border-bottom: 3px solid blue;
+  }`
+      : ""};
 `;
 
 const OR = styled.div`
   position: absolute;
   width: 100%;
   height: 10px;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
+  bottom: 0;
 `;
