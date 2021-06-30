@@ -117,7 +117,7 @@ export default RegistrationPage;
 const RegistrationPageContainer = styled.div`
   height: fit-content;
   width: 30vw;
-  /* background-color: coral; */
+
   font-family: "Times New Roman", Times, serif;
   display: flex;
   flex-direction: column;
@@ -126,7 +126,6 @@ const RegistrationPageContainer = styled.div`
   small {
     font-size: 12px;
     font-weight: 300;
-    /* background-color: aqua; */
   }
 
   small:last-of-type {
@@ -140,7 +139,6 @@ const RegistrationPageContainer = styled.div`
 `;
 
 const EmailField = styled(TextField)`
-  /* background-color: blanchedalmond; */
   margin-top: 40px !important;
 
   label.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated {
@@ -169,7 +167,6 @@ const SurnameField = styled(EmailField)``;
 const FirstNameField = styled(EmailField)``;
 const PasswordField = styled(EmailField)``;
 const PhoneNumberField = styled.div`
-  /* background-color: pink; */
   display: flex;
   justify-content: space-between;
 `;
@@ -185,7 +182,7 @@ const PasswordHint = styled.div`
 const CheckContainer = styled.div`
   height: 60px;
   width: 30vw;
-  /* background-color: purple; */
+
   display: flex;
   flex-wrap: no-wrap;
   margin-top: 35px;
@@ -194,7 +191,6 @@ const CheckContainer = styled.div`
   }
 `;
 const CheckButton = styled.div`
-  /* background-color: yellow; */
   position: relative;
   border: 1px solid black;
   height: 10px;
@@ -245,6 +241,11 @@ const FormButton = styled.div`
     position: absolute;
     width: 37%;
     bottom: 17px;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+  }
+  &:hover:after {
+    opacity: 10;
   }
 `;
 

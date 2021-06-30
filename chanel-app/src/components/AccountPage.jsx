@@ -38,7 +38,7 @@ export default AccountPage;
 
 const AccountPageContainer = styled.div`
   width: 100%;
-  height: 250vh;
+  height: fit-content;
   /* background-color: lightgreen; */
   display: flex;
   align-items: center;
