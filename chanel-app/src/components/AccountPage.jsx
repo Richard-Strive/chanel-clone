@@ -38,8 +38,8 @@ export default AccountPage;
 
 const AccountPageContainer = styled.div`
   width: 100%;
-  height: 100vh;
-  background-color: lightgreen;
+  height: 250vh;
+  /* background-color: lightgreen; */
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -47,15 +47,16 @@ const AccountPageContainer = styled.div`
 
 const TabsContainer = styled.div`
   position: relative;
-  width: 30vw;
+  width: 31.5vw;
   height: 10vh;
-  background-color: yellow;
+  /* background-color: yellow; */
   display: flex;
+  font-weight: 600;
 `;
 
 const TabOne = styled.div`
   position: relative;
-  background-color: aqua;
+  /* background-color: aqua; */
   height: 100%;
   width: 50%;
   cursor: pointer;
@@ -72,13 +73,13 @@ const TabOne = styled.div`
     left: 0;
     right: 0;
     height: 5px;
-    border-bottom: 3px solid blue;
+    border-bottom: 3px solid black;
   }`
       : ""};
 `;
 const TabTwo = styled.div`
   position: relative;
-  background-color: pink;
+  /* background-color: pink; */
   height: 100%;
   width: 50%;
   display: flex;
@@ -95,7 +96,7 @@ const TabTwo = styled.div`
     left: 0;
     right: 0;
     height: 5px;
-    border-bottom: 3px solid blue;
+    border-bottom: 3px solid black;
   }`
       : ""};
 `;
