@@ -7,6 +7,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import TextField from "@material-ui/core/TextField";
 
 const PasswordInput = styled(Input)``;
 const PasswordInputLabel = styled(InputLabel)``;
@@ -29,6 +30,11 @@ function LoginPage() {
   return (
     <LoginPageContainer>
       LoginPage
+      <TextField
+        id="standard-secondary"
+        label="Standard secondary"
+        color="secondary"
+      />
       <FormControl variant="filled">
         <PasswordInputLabel htmlFor="standard-adornment-password">
           Password
