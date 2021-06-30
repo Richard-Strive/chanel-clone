@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import TextField from "@material-ui/core/TextField";
 import { titles, countries } from "./arrays";
+import AccountButton from "./AccountButton";
 
 function RegistrationPage() {
   const [title, setCurrency] = useState("");
@@ -107,7 +108,7 @@ function RegistrationPage() {
         Further information, in particular regarding your data subject rights,
         can be found in the <u>Privacy Policy</u>
       </small>
-      <FormButton>CREATE ACCOUNT</FormButton>
+      <AccountButton text={"CREATE ACCOUNT"} line={"37%"} />
     </RegistrationPageContainer>
   );
 }
@@ -219,33 +220,6 @@ const CheckButton = styled.div`
         : ""};
 
     transition: all 250ms ease;
-  }
-`;
-
-const FormButton = styled.div`
-  width: 30vw;
-  height: 10vh;
-  background-color: black;
-  color: white;
-  margin-top: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  position: relative;
-  cursor: pointer;
-
-  &:after {
-    content: "";
-    border-bottom: 1px solid white;
-    position: absolute;
-    width: 37%;
-    bottom: 17px;
-    opacity: 0;
-    transition: opacity 500ms ease-in-out;
-  }
-  &:hover:after {
-    opacity: 10;
   }
 `;
 
