@@ -9,12 +9,15 @@ import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import TextField from "@material-ui/core/TextField";
 import { AiOutlineRight } from "react-icons/ai";
+import AccountButton from "./AccountButton";
 
 function LoginPage() {
+  const [check, setCheck] = useState(false);
   const [values, setValues] = useState({
     password: "",
     showPassword: false,
   });
+
   const handleClickShowPassword = () => {
     setValues({ ...values, showPassword: !values.showPassword });
   };
@@ -52,15 +55,21 @@ function LoginPage() {
             </InputAdornment>
           }
         />
-        <ForgotPassword>Forgot password?</ForgotPassword>
+        <ForgotPassword>
+          Forgot password?
+          <RightArrow />
+        </ForgotPassword>
+        <RememberMe onClick={() => setCheck(!check)}>
+          <CheckButton check={check} />
+          Remember me
+        </RememberMe>
+        <AccountButton line={"15%"} text={"SING IN"} />
       </MyForm>
     </LoginPageContainer>
   );
 }
 
 export default LoginPage;
-
-// const RightArrow = styled(AiOutlineRight)``;
 
 const LoginPageContainer = styled.div`
   font-family: "Times New Roman", Times, serif;
@@ -71,17 +80,37 @@ const LoginPageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  background-color: yellow;
+  /* background-color: yellow; */
 `;
-
+const RightArrow = styled(AiOutlineRight)`
+  height: 11px;
+`;
 const ForgotPassword = styled.div`
-  width: 100%;
+  /* width: 100%; */
+  width: 10vw;
+
   height: 30px;
-  background-color: violet;
-
+  /* background-color: violet; */
   margin-top: 35px;
-`;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
 
+  &:after {
+    content: "";
+    border-bottom: 1px solid black;
+    opacity: 0;
+    width: 85%;
+    transition: all 280ms ease-out;
+    position: absolute;
+    bottom: 5px;
+  }
+
+  &:hover:after {
+    opacity: 10;
+  }
+`;
 const PasswordInput = styled(Input)``;
 const PasswordInputLabel = styled(InputLabel)``;
 const MyForm = styled(FormControl)`
@@ -117,5 +146,46 @@ const EmailField = styled(TextField)`
 
   .MuiInput-underline:after {
     border-bottom: 2px solid black;
+  }
+`;
+
+const RememberMe = styled.div`
+  display: flex;
+  width: 10vw;
+  height: 30px;
+  /* background-color: tomato; */
+  margin-top: 20px;
+  cursor: pointer;
+`;
+
+const CheckButton = styled.div`
+  position: relative;
+  border: 1px solid black;
+  height: 5px;
+  width: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-top: 3px;
+
+  ${(props) => (props.check ? "border: 2px solid black;" : "")}
+  transition:all 250ms ease;
+  &:after {
+    content: "";
+    height: 0%;
+    width: 0%;
+    background-color: black;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    ${(props) =>
+      props.check
+        ? `
+    height: 100%;
+    width: 100%;
+    `
+        : ""};
+
+    transition: all 250ms ease;
   }
 `;

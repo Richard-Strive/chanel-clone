@@ -29,8 +29,8 @@ function AccountPage() {
         </TabTwo>
         <OR />
       </TabsContainer>
-      {/* <RegistrationPage /> */}
-      <LoginPage />
+
+      {tabOne ? <LoginPage /> : <RegistrationPage />}
     </AccountPageContainer>
   );
 }
@@ -39,9 +39,8 @@ export default AccountPage;
 
 const AccountPageContainer = styled.div`
   width: 100%;
-  height: 120vh;
-  /* height: fit-content; */
-  background-color: lightgreen;
+  height: fit-content;
+  background-color: white;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -51,7 +50,7 @@ const TabsContainer = styled.div`
   position: relative;
   width: 31.5vw;
   height: 10vh;
-  /* background-color: yellow; */
+  /* background-color: blueviolet; */
   display: flex;
   font-weight: 600;
 `;

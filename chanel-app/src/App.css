@@ -1,5 +1,5 @@
 .App {
-  height: 100vh;
+  height: fit-content;
 }
 .MuiInputBase-input {
   margin: 2px !important;
