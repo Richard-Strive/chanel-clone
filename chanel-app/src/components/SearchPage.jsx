@@ -1,11 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
 import { RiSearchLine } from "react-icons/ri";
 
 function SearchPage() {
+  const dispatch = useDispatch();
+
   return (
     <SearchContainer>
-      <CloseBtn aria-hidden="true">&times;</CloseBtn>
+      <CloseBtn
+        aria-hidden="true"
+        onClick={() => dispatch({ type: "MODAL", payload: true })}
+      >
+        &times;
+      </CloseBtn>
       <SearchContent>
         <SearchInput>
           <input type="text" placeholder="SEARCH" />
@@ -27,16 +35,14 @@ function SearchPage() {
 
 export default SearchPage;
 
-const CloseBtn = styled.div`
+const CloseBtn = styled.button`
   position: absolute;
   right: 10px;
-
   font-size: 40px;
   top: 10px;
-  height: fit-content;
-  display: flex;
-  align-items: center;
+  border: none;
   cursor: pointer;
+  background-color: white;
 `;
 
 const SearchContainer = styled.div`
@@ -45,7 +51,6 @@ const SearchContainer = styled.div`
   width: 100vw;
   display: flex;
   justify-content: center;
-  /* background-color: burlywood; */
 `;
 
 const SearchContent = styled.div`
@@ -55,7 +60,6 @@ const SearchContent = styled.div`
 const SearchLinks = styled.div`
   width: 100%;
   height: 70vh;
-
   ul {
     list-style: none;
 
@@ -66,7 +70,7 @@ const SearchLinks = styled.div`
     }
 
     li {
-      margin: 10px 0;
+      margin: 20px -38px;
       font-weight: 600;
       cursor: pointer;
     }

@@ -8,8 +8,7 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import { RiQuestionnaireLine } from "react-icons/ri";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
-
-//NEED TO FIX THE ALIGN BETWEEN  ABOUT LINK AND THE ICON WITH THE REST
+import { useDispatch } from "react-redux";
 
 const Question = styled(RiQuestionnaireLine)``;
 const Position = styled(HiOutlineLocationMarker)``;
@@ -42,11 +41,22 @@ const enableScroll = () => {
 function Header() {
   const [openSideMenu, setOpenSideMenu] = useState(false);
 
+  const dispatch = useDispatch();
+
   if (openSideMenu) {
     disableScroll();
   } else {
     enableScroll();
   }
+
+  const openAccount = () => {
+    dispatch({ type: "MODAL", payload: false });
+    dispatch({ type: "ACCOUNT", payload: true });
+  };
+  const openModal = () => {
+    dispatch({ type: "MODAL", payload: true });
+    dispatch({ type: "ACCOUNT", payload: false });
+  };
 
   return (
     <Container>
@@ -95,8 +105,8 @@ function Header() {
           <h1>CHANEL</h1>
         </ChanelLogo>
         <ChanelIcons>
-          <Search />
-          <User />
+          <Search onClick={() => openModal()} />
+          <User onClick={() => openAccount()} />
           <Star />
           <Shopping />
         </ChanelIcons>
