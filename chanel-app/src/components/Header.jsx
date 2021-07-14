@@ -61,6 +61,12 @@ function Header() {
     dispatch({ type: "ACCOUNT", payload: false });
   };
 
+  const openWish = () => {
+    dispatch({ type: "WISH", payload: true });
+    dispatch({ type: "MODAL", payload: false });
+    dispatch({ type: "ACCOUNT", payload: false });
+  };
+
   return (
     <Container>
       <BurgerSideMenuBg show={openSideMenu} />
@@ -144,7 +150,7 @@ function Header() {
         <ChanelIcons>
           <Search onClick={() => openModal()} />
           <User onClick={() => openAccount()} />
-          <Star />
+          <Star onClick={() => openWish()} />
           <Shopping onClick={() => setOpenSideMenu2(true)} />
         </ChanelIcons>
       </TopHeader>
