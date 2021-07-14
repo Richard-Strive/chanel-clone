@@ -10,7 +10,7 @@ function SearchPage() {
     <SearchContainer>
       <CloseBtn
         aria-hidden="true"
-        onClick={() => dispatch({ type: "MODAL", payload: true })}
+        onClick={() => dispatch({ type: "MODAL", payload: false })}
       >
         &times;
       </CloseBtn>

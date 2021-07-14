@@ -9,6 +9,7 @@ import { RiQuestionnaireLine } from "react-icons/ri";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 import { useDispatch } from "react-redux";
+import { IoIosArrowForward } from "react-icons/io";
 
 const Question = styled(RiQuestionnaireLine)``;
 const Position = styled(HiOutlineLocationMarker)``;
@@ -16,6 +17,7 @@ const Search = styled(RiSearchLine)``;
 const User = styled(BiUser)``;
 const Star = styled(BsStar)``;
 const Shopping = styled(HiOutlineShoppingBag)``;
+const RightArrow = styled(IoIosArrowForward)``;
 const Close = styled(CloseIcon)`
   position: absolute;
   right: 1%;
@@ -40,6 +42,7 @@ const enableScroll = () => {
 
 function Header() {
   const [openSideMenu, setOpenSideMenu] = useState(false);
+  const [openSideMenu2, setOpenSideMenu2] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -96,6 +99,40 @@ function Header() {
         </ul>
       </BurgerSideMenu>
 
+      <BurgerSideMenuBg2 show={openSideMenu2} />
+      <BurgerSideMenu2 show={openSideMenu2}>
+        <Close onClick={() => setOpenSideMenu2(false)} />
+        <h1>SHOPPING BAG</h1>
+        <small>Your bag is empty.</small>
+        <h3>SHOP ONLINE</h3>
+        <p>
+          EYEWEAR <RightArrow />
+        </p>
+        <p>
+          FRAGRANCE
+          <RightArrow />
+        </p>
+        <p>
+          MAKEUP
+          <RightArrow />
+        </p>
+        <p>
+          SKINCARE HOME
+          <RightArrow />
+        </p>
+        <NeedMoreHelp>
+          <h1>NEED HELP?</h1>
+          <h3>CONTACT US</h3>
+
+          <small>
+            CHANEL advisors are available to answer all of your questions.
+          </small>
+          <br />
+          <small>
+            <u>Client care</u>
+          </small>
+        </NeedMoreHelp>
+      </BurgerSideMenu2>
       <TopHeader>
         <TableMenuSearch>
           <Menu onClick={() => setOpenSideMenu(true)} />
@@ -108,7 +145,7 @@ function Header() {
           <Search onClick={() => openModal()} />
           <User onClick={() => openAccount()} />
           <Star />
-          <Shopping />
+          <Shopping onClick={() => setOpenSideMenu2(true)} />
         </ChanelIcons>
       </TopHeader>
       <BottomHeader>
@@ -142,6 +179,20 @@ const Container = styled.div`
 `;
 
 const BurgerSideMenuBg = styled.div`
+  display: ${(props) => (props.show ? "block" : "none")};
+  position: fixed; /* Stay in place */
+  z-index: 100000000; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+
+  width: 100%; /* Full width */
+  height: 100vh; /* Full height */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+`;
+
+const BurgerSideMenuBg2 = styled.div`
   display: ${(props) => (props.show ? "block" : "none")};
   position: fixed; /* Stay in place */
   z-index: 100000000; /* Sit on top */
@@ -217,6 +268,31 @@ const BurgerSideMenu = styled.div`
 
   @media (max-width: 480px) {
     width: 90% !important;
+  }
+`;
+
+const NeedMoreHelp = styled.div`
+  width: 65%;
+  background-color: #f6f6f6;
+  text-align: center;
+`;
+
+const BurgerSideMenu2 = styled.div`
+  position: fixed;
+  right: ${(props) => (props.show ? "0" : "-100%")};
+  top: 0;
+  z-index: 10000000000000000000000;
+  height: 100vh;
+  background-color: white;
+  transition: right 280ms ease-in-out;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    display: flex;
+    align-items: center;
   }
 `;
 
