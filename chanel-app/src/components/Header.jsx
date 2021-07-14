@@ -150,18 +150,68 @@ function Header() {
       </TopHeader>
       <BottomHeader>
         <MainLinks>
-          <a href>HAUTE COUTURE</a>
-          <a href>FASHION</a>
-          <a href>HIGH JEWELLERY</a>
-          <a href>FINE JEWELLERY</a>
-          <a href>WATCHES</a>
-          <a href>EYEWEAR</a>
-          <a href>FRAGRANCE</a>
-          <a href>MAKEUP</a>
-          <a href>SKINCARE</a>
+          <a
+            href
+            onClick={() => dispatch({ type: "COMING_SOON", payload: true })}
+          >
+            HAUTE COUTURE
+          </a>
+          <a
+            href
+            onClick={() => dispatch({ type: "COMING_SOON", payload: true })}
+          >
+            FASHION
+          </a>
+          <a
+            href
+            onClick={() => dispatch({ type: "COMING_SOON", payload: true })}
+          >
+            HIGH JEWELLERY
+          </a>
+          <a
+            href
+            onClick={() => dispatch({ type: "COMING_SOON", payload: true })}
+          >
+            FINE JEWELLERY
+          </a>
+          <a
+            href
+            onClick={() => dispatch({ type: "COMING_SOON", payload: true })}
+          >
+            WATCHES
+          </a>
+          <a
+            href
+            onClick={() => dispatch({ type: "COMING_SOON", payload: true })}
+          >
+            EYEWEAR
+          </a>
+          <a
+            href
+            onClick={() => dispatch({ type: "COMING_SOON", payload: true })}
+          >
+            FRAGRANCE
+          </a>
+          <a
+            href
+            onClick={() => dispatch({ type: "COMING_SOON", payload: true })}
+          >
+            MAKEUP
+          </a>
+          <a
+            href
+            onClick={() => dispatch({ type: "COMING_SOON", payload: true })}
+          >
+            SKINCARE
+          </a>
         </MainLinks>
         <AboutLink>
-          <a href>ABOUT CHANEL</a>
+          <a
+            href
+            onClick={() => dispatch({ type: "COMING_SOON", payload: true })}
+          >
+            ABOUT CHANEL
+          </a>
         </AboutLink>
       </BottomHeader>
     </Container>

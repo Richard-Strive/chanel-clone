@@ -4,20 +4,27 @@ import Home from "./components/Home";
 import AccountPage from "./components/AccountPage";
 import SearchPage from "./components/SearchPage";
 import { useSelector } from "react-redux";
+import ComingSoonPage from "./components/ComingSoonPage";
 
 function App() {
   const showModal = useSelector((state) => state.searchModal);
   const showAccount = useSelector((state) => state.showAccount);
+  const showComingSoon = useSelector((state) => state.comingSoon);
 
-  // NEED TO FIX THE MODAL LOGIC
   return (
     <div className="App">
-      {showModal ? (
-        <SearchPage />
+      {showComingSoon ? (
+        <ComingSoonPage />
       ) : (
         <>
-          <Header />
-          {showAccount ? <AccountPage /> : <Home />}
+          {showModal ? (
+            <SearchPage />
+          ) : (
+            <>
+              <Header />
+              {showAccount ? <AccountPage /> : <Home />}
+            </>
+          )}
         </>
       )}
     </div>
