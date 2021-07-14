@@ -67,6 +67,12 @@ function Header() {
     dispatch({ type: "ACCOUNT", payload: false });
   };
 
+  const backToHome = () => {
+    dispatch({ type: "WISH", payload: false });
+    dispatch({ type: "MODAL", payload: false });
+    dispatch({ type: "ACCOUNT", payload: false });
+  };
+
   return (
     <Container>
       <BurgerSideMenuBg show={openSideMenu} />
@@ -144,7 +150,7 @@ function Header() {
           <Menu onClick={() => setOpenSideMenu(true)} />
           <Search />
         </TableMenuSearch>
-        <ChanelLogo>
+        <ChanelLogo onClick={() => backToHome()}>
           <h1>CHANEL</h1>
         </ChanelLogo>
         <ChanelIcons>
@@ -290,7 +296,6 @@ const BurgerSideMenu = styled.div`
     justify-content: space-between;
     align-items: center;
     list-style: none;
-
     width: 100%;
   }
 
@@ -408,6 +413,7 @@ const ChanelLogo = styled.div`
     font-size: 2.7vw;
     font-weight: 600;
     letter-spacing: 5px;
+    cursor: pointer;
 
     @media (max-width: 768px) {
       padding-top: 0 !important;
